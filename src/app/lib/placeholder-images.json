@@ -3,38 +3,38 @@
   "placeholderImages": [
     {
       "id": "hero-bg",
-      "description": "Modern architecture concrete building with sky",
-      "imageUrl": "https://picsum.photos/seed/concrete1/1920/1080",
-      "imageHint": "modern architecture concrete"
+      "description": "صورة البنر الرئيسي لكونكريت سولوشنز",
+      "imageUrl": "https://xn--ogbhrq.vip/wp-content/uploads/2026/03/concrete4.png",
+      "imageHint": "concrete banner"
     },
     {
       "id": "lighting-base",
       "description": "Concrete lighting base for street poles",
-      "imageUrl": "https://picsum.photos/seed/lighting/600/400",
+      "imageUrl": "https://xn--ogbhrq.vip/wp-content/uploads/2026/03/concrete5.png",
       "imageHint": "concrete pillar"
     },
     {
       "id": "manhole",
       "description": "Industrial concrete manhole cover and ring",
-      "imageUrl": "https://picsum.photos/seed/manhole/600/400",
+      "imageUrl": "https://xn--ogbhrq.vip/wp-content/uploads/2026/03/concrete1.png",
       "imageHint": "industrial concrete"
     },
     {
       "id": "barrier",
       "description": "Concrete jersey barriers for road safety",
-      "imageUrl": "https://picsum.photos/seed/barrier/600/400",
+      "imageUrl": "https://xn--ogbhrq.vip/wp-content/uploads/2026/03/concrete6.png",
       "imageHint": "road barrier"
     },
     {
       "id": "bench",
       "description": "Modern concrete outdoor bench in a park",
-      "imageUrl": "https://picsum.photos/seed/bench/600/400",
+      "imageUrl": "https://xn--ogbhrq.vip/wp-content/uploads/2026/03/concrete2.png",
       "imageHint": "concrete bench"
     },
     {
       "id": "car-stopper",
       "description": "Concrete car wheel stoppers in a parking lot",
-      "imageUrl": "https://picsum.photos/seed/carstopper/600/400",
+      "imageUrl": "https://xn--ogbhrq.vip/wp-content/uploads/2026/03/concrete7.png",
       "imageHint": "parking stopper"
     }
   ]
