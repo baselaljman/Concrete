@@ -25,7 +25,19 @@ const translations: Record<Language, Record<string, string>> = {
     btn_contact: 'تواصل معنا',
     btn_call: 'اتصل بالمبيعات',
     section_why_title: 'لماذا نحن مختلفون؟',
-    footer_desc: 'نقدم حلولاً خرسانية متكاملة لمشاريعكم بكفاءة وجودة عالية.',
+    footer_desc: 'نقدم حلولاً خرسانية متكاملة لمشاريعكم بكفاءة وجودة عالية. نحن نضمن تجربة فريدة من اختيار المنتج إلى التسليم.',
+    footer_quick_links: 'روابط سريعة',
+    footer_categories: 'الفئات',
+    footer_contact_us: 'اتصل بنا',
+    footer_rights: 'جميع الحقوق محفوظة',
+    footer_location: 'المنطقة الصناعية، الرياض، المملكة العربية السعودية',
+    footer_catalog: 'كتالوج المنتجات',
+    footer_company_profile: 'ملف الشركة',
+    footer_customer_support: 'دعم العملاء',
+    cat_lighting: 'قواعد الإنارة',
+    cat_manholes: 'المناهل والحلقات',
+    cat_barriers: 'حواجز الطرق',
+    cat_benches: 'المقاعد الحضرية',
     lang_switch: 'English',
     contact_title: 'تواصل معنا',
     about_title: 'لماذا نحن؟',
@@ -44,7 +56,19 @@ const translations: Record<Language, Record<string, string>> = {
     btn_contact: 'Contact Us',
     btn_call: 'Call Sales',
     section_why_title: 'Why Are We Different?',
-    footer_desc: 'We provide integrated concrete solutions for your projects with high efficiency and quality.',
+    footer_desc: 'We provide integrated concrete solutions for your projects with high efficiency and quality. We guarantee a unique experience from product selection to delivery.',
+    footer_quick_links: 'Quick Links',
+    footer_categories: 'Categories',
+    footer_contact_us: 'Contact Us',
+    footer_rights: 'All rights reserved',
+    footer_location: 'Industrial Area, Riyadh, Saudi Arabia',
+    footer_catalog: 'Product Catalog',
+    footer_company_profile: 'Company Profile',
+    footer_customer_support: 'Customer Support',
+    cat_lighting: 'Lighting Bases',
+    cat_manholes: 'Manholes & Rings',
+    cat_barriers: 'Road Barriers',
+    cat_benches: 'Urban Benches',
     lang_switch: 'العربية',
     contact_title: 'Contact Us',
     about_title: 'Why Us?',
@@ -72,7 +96,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
 
   return (
     <LanguageContext.Provider value={{ language, setLanguage, t, dir }}>
-      <div dir={dir}>{children}</div>
+      <div dir={language === 'ar' ? 'rtl' : 'ltr'}>{children}</div>
     </LanguageContext.Provider>
   );
 }
