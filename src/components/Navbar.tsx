@@ -1,14 +1,10 @@
+
 'use client';
 
 import Link from 'next/link';
-import { User, Search, Construction, Menu } from 'lucide-react';
+import { Languages, Search, Construction, Menu } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu';
+import { useLanguage } from '@/components/LanguageProvider';
 import {
   Sheet,
   SheetContent,
@@ -20,12 +16,17 @@ import { useState } from 'react';
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const { language, setLanguage, t, dir } = useLanguage();
 
   const navLinks = [
-    { href: '/catalog', label: 'المنتجات' },
-    { href: '/about', label: 'لماذا نحن؟' },
-    { href: '/contact', label: 'اتصل بنا' },
+    { href: '/catalog', label: t('nav_products') },
+    { href: '/about', label: t('nav_about') },
+    { href: '/contact', label: t('nav_contact') },
   ];
+
+  const toggleLanguage = () => {
+    setLanguage(language === 'ar' ? 'en' : 'ar');
+  };
 
   return (
     <nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -36,7 +37,7 @@ export function Navbar() {
               <Construction className="h-6 w-6 text-primary-foreground" />
             </div>
             <span className="font-headline font-bold text-xl tracking-tight text-primary">
-              كونكريت
+              {language === 'ar' ? 'كونكريت' : 'Concrete'}
             </span>
           </Link>
           <div className="hidden md:flex items-center gap-6">
@@ -53,24 +54,21 @@ export function Navbar() {
         </div>
 
         <div className="flex items-center gap-2">
+          <Button 
+            variant="ghost" 
+            size="sm" 
+            onClick={toggleLanguage}
+            className="flex items-center gap-2 font-bold text-primary"
+          >
+            <Languages className="h-5 w-5" />
+            <span className="hidden sm:inline">{t('lang_switch')}</span>
+          </Button>
+
           <Link href="/catalog">
             <Button variant="ghost" size="icon" className="hidden sm:flex">
               <Search className="h-5 w-5" />
             </Button>
           </Link>
-
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button variant="ghost" size="icon">
-                <User className="h-5 w-5" />
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="start" className="w-48">
-              <DropdownMenuItem asChild>
-                <Link href="/contact" className="text-right w-full">تواصل مع الدعم</Link>
-              </DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
 
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
@@ -78,9 +76,11 @@ export function Navbar() {
                 <Menu className="h-5 w-5" />
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[300px] text-right">
+            <SheetContent side={dir === 'rtl' ? 'right' : 'left'} className={`w-[300px] ${dir === 'rtl' ? 'text-right' : 'text-left'}`}>
               <SheetHeader>
-                <SheetTitle className="text-right font-headline text-primary border-b pb-4">القائمة</SheetTitle>
+                <SheetTitle className={`${dir === 'rtl' ? 'text-right' : 'text-left'} font-headline text-primary border-b pb-4`}>
+                  {language === 'ar' ? 'القائمة' : 'Menu'}
+                </SheetTitle>
               </SheetHeader>
               <div className="flex flex-col gap-4 py-8">
                 {navLinks.map((link) => (
@@ -93,13 +93,13 @@ export function Navbar() {
                     {link.label}
                   </Link>
                 ))}
-                <Link 
-                  href="/catalog" 
-                  onClick={() => setIsOpen(false)}
-                  className="text-lg font-medium py-2 flex items-center justify-end gap-2"
+                <button 
+                  onClick={() => { toggleLanguage(); setIsOpen(false); }}
+                  className="text-lg font-medium py-2 flex items-center gap-2"
+                  style={{ justifyContent: dir === 'rtl' ? 'flex-end' : 'flex-start' }}
                 >
-                  البحث عن منتج <Search className="h-5 w-5" />
-                </Link>
+                   {t('lang_switch')} <Languages className="h-5 w-5" />
+                </button>
               </div>
             </SheetContent>
           </Sheet>

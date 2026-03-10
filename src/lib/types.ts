@@ -2,10 +2,21 @@
 export interface Product {
   id: string;
   name: string;
+  enName: string;
   category: 'lighting' | 'manholes' | 'barriers' | 'benches' | 'car-stoppers' | 'planters' | 'signals';
   description: string;
-  price?: number; // Price optional since it's a catalog
+  enDescription: string;
+  price?: number;
   specifications: string[];
+  enSpecifications: string[];
   imageUrl: string;
   material: string;
+  enMaterial: string;
+}
+
+export interface Category {
+  id: string;
+  name: string;
+  enName: string;
+  imageUrl: string;
 }

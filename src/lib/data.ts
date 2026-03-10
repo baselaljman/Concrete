@@ -1,113 +1,75 @@
 
-import { Product } from './types';
+import { Product, Category } from './types';
 
 export const PRODUCTS: Product[] = [
   {
     id: 'concrete-barriers-nj',
     name: 'حواجز خرسانية',
+    enName: 'Concrete Barriers',
     category: 'barriers',
-    description: 'هي عبارة عن حواجز نيوجيرسي يستخدم في صناعتها الخرسانة المعتمدة مع حديد التسليح. تستخدم هذه الحواجز لعدة اشياء منها تنظيم حركة السير المروري في اثناء اعمال الطرقات و تستخدم لبناء سور حول مكان ما يتم عمل صيانات داخل هذا المكان وتستخدم في منصفات الطريق و تعرف باسم حواجز الهاي واي وتستخدم ايضاً لحماية المواقع الامنية و تنظيم حركات السير لديها لذلك نحن نوفرها بجميع انواعها و اشكالها وكمياتها حسب طلب العميل و البنود المتفق عليها داخل العقد.',
+    description: 'حواجز نيوجيرسي مصنعة من خرسانة معتمدة مع حديد تسليح، تستخدم لتنظيم السير وحماية المواقع الأمنية.',
+    enDescription: 'New Jersey barriers made of certified concrete with reinforcement, used for traffic organization and security site protection.',
     specifications: [
       'خرسانة معتمدة عالية الجودة',
       'تدعيم بحديد التسليح',
-      'مقاومة عالية للصدمات',
-      'متوفرة بجميع الأنواع والأشكال'
+      'مقاومة عالية للصدمات'
+    ],
+    enSpecifications: [
+      'High-quality certified concrete',
+      'Steel reinforcement',
+      'High impact resistance'
     ],
     imageUrl: 'https://xn--ogbhrq.vip/wp-content/uploads/2026/03/concrete6.png',
-    material: 'خرسانة مسلحة معتمدة'
+    material: 'خرسانة مسلحة معتمدة',
+    enMaterial: 'Reinforced Certified Concrete'
   },
   {
     id: 'concrete-lighting-bases',
     name: 'قواعد انارة',
+    enName: 'Lighting Bases',
     category: 'lighting',
-    description: 'تختلف احجامها وانواعها حسب الطلب، تستخدم هذه القواعد لتثبيت اعمدة الانارة في الطرقات و المباني الخاصة والعامة. وهي قواعد مصنوعة من الخرسانة المسلحة و لها قدرة تحمل ضغط ويتم عزلها بمواد مانعة لدخول الماء لها.',
+    description: 'قواعد خرسانية مسلحة لتثبيت أعمدة الإنارة، معزولة تماماً ضد الرطوبة والمياه.',
+    enDescription: 'Reinforced concrete bases for fixing lighting poles, fully insulated against moisture and water.',
     specifications: [
       'خرسانة مسلحة معتمدة',
       'مقاومة عالية للضغط',
-      'معزولة بمواد مانعة لتسرب المياه',
-      'تثبيت آمن وقوي لأعمدة الإنارة'
+      'عزل كامل ضد المياه'
+    ],
+    enSpecifications: [
+      'Certified reinforced concrete',
+      'High pressure resistance',
+      'Full water insulation'
     ],
     imageUrl: 'https://xn--ogbhrq.vip/wp-content/uploads/2026/03/concrete5.png',
-    material: 'خرسانة مسلحة معتمدة'
-  },
-  {
-    id: 'concrete-signal-bases',
-    name: 'قواعد اشارة',
-    category: 'signals',
-    description: 'تختلف احجامها وانواعها حسب الطلب، تستخدم هذه القواعد لتثبيت اعمدة اشارات الطريق في الطرقات السريعة وداخل المدينة و تثبت اعمدة كميرات المراقبة و غيرها من الاستخدامات الكثيرة. وهي قواعد مصنوعة من الخرسانة المسلحة و لها قدرة تحمل ضغط ويتم عزلها بمواد مانعة لدخول الماء لها.',
-    specifications: [
-      'خرسانة مسلحة معتمدة',
-      'تستخدم لإشارات الطريق وكاميرات المراقبة',
-      'مقاومة عالية للضغط والظروف الجوية',
-      'عزل كامل ضد تسرب المياه'
-    ],
-    imageUrl: 'https://xn--ogbhrq.vip/wp-content/uploads/2026/03/concrete8.png',
-    material: 'خرسانة مسلحة معتمدة'
+    material: 'خرسانة مسلحة معتمدة',
+    enMaterial: 'Reinforced Certified Concrete'
   },
   {
     id: 'concrete-manholes',
-    name: 'مناهل ارضية (للصرف الصحي-لتمديدات الكهرباء)',
+    name: 'مناهل ارضية',
+    enName: 'Concrete Manholes',
     category: 'manholes',
-    description: 'تتوفر بجميع انواعها و مقاساتها حسب الطلب. هذه المناهل هي عبارة عن خرسانة مع حديد تسليح يتم صبها في قوالب حسب الطلب والمعايير المتفق عليها ويتم عزلها بمواد لتصبح جاهزة للتوريد.',
+    description: 'مناهل خرسانية للصرف الصحي وتمديدات الكهرباء، مصنعة وفق المعايير الهندسية الدقيقة.',
+    enDescription: 'Concrete manholes for sewage and electrical installations, manufactured according to precise engineering standards.',
     specifications: [
-      'صب في قوالب مخصصة حسب الطلب',
+      'صب في قوالب مخصصة',
       'حديد تسليح عالي المتانة',
-      'مطابقة للمعايير الهندسية المتفق عليها',
-      'عزل كامل ضد التسريب والظروف الأرضية'
+      'مطابقة للمواصفات الفنية'
+    ],
+    enSpecifications: [
+      'Cast in custom molds',
+      'High durability reinforcement',
+      'Compliant with technical specifications'
     ],
     imageUrl: 'https://xn--ogbhrq.vip/wp-content/uploads/2026/03/concrete1.png',
-    material: 'خرسانة مسلحة معتمدة'
-  },
-  {
-    id: 'concrete-car-stoppers',
-    name: 'مصدات ارضية',
-    category: 'car-stoppers',
-    description: 'هي كتلة خرسانية مستطيلة يتم صناعتها من حديد تسليح و خرسانة تستخدم هذه المصدات لتنظيم وقوف السيارات في اماكن الباركنق ويتوفر لدينا ايضاً النوع الثاني منها اللذي هو عبارة عن بلاستك مقوى مما يجعله قابل لتحمل الضغط.',
-    specifications: [
-      'تصنيع من خرسانة وحديد تسليح عالي الجودة',
-      'متوفرة بنوع بلاستيك مقوى يتحمل الضغط العالي',
-      'مثالية لتنظيم مواقف السيارات',
-      'متانة عالية ومقاومة للظروف الجوية'
-    ],
-    imageUrl: 'https://xn--ogbhrq.vip/wp-content/uploads/2026/03/concrete7.png',
-    material: 'خرسانة مسلحة / بلاستيك مقوى'
-  },
-  {
-    id: 'decorative-benches',
-    name: 'كراسي تجميلية',
-    category: 'benches',
-    description: 'هي عبارة عن خرسانة من نوع تجميلي مع انواع مميزة من الاحجار يتم صناعتها بعناية لتظهر بشكل يجمل المكان و تستخدم للاماكن العامة كالحدائق و اماكن التجمعات و المستشفيات وغيرها.',
-    specifications: [
-      'خرسانة تجميلية عالية الجودة',
-      'أحجار مميزة وتصاميم فنية',
-      'صناعة يدوية بعناية فائقة',
-      'مقاومة للعوامل الجوية وتجمل المكان'
-    ],
-    imageUrl: 'https://xn--ogbhrq.vip/wp-content/uploads/2026/03/concrete2.png',
-    material: 'خرسانة تجميلية مع أحجار مميزة'
-  },
-  {
-    id: 'decorative-planters',
-    name: 'احواض زهور تجميلية',
-    category: 'planters',
-    description: 'هي عبارة عن خرسانة من نوع تجميلي مع انواع مميزة من الاحجار يتم صناعتها بعناية لتظهر بشكل يجمل المكان يتم وضع الزهور بداخلها و تستخدم للاماكن العامة كالحدائق و اماكن التجمعات و المستشفيات وغيرها.',
-    specifications: [
-      'تصميم جمالي فريد',
-      'متوفرة بأحجام وأشكال متنوعة',
-      'مقاومة عالية للرطوبة والعوامل الجوية',
-      'مثالية لتزيين المداخل والحدائق'
-    ],
-    imageUrl: 'https://xn--ogbhrq.vip/wp-content/uploads/2026/03/concrete3.png',
-    material: 'خرسانة تجميلية مع أحجار مميزة'
+    material: 'خرسانة مسلحة معتمدة',
+    enMaterial: 'Reinforced Certified Concrete'
   }
 ];
 
-export const CATEGORIES = [
-  { id: 'barriers', name: 'حواجز الطرق', imageUrl: 'https://xn--ogbhrq.vip/wp-content/uploads/2026/03/concrete6.png' },
-  { id: 'lighting', name: 'قواعد الإنارة', imageUrl: 'https://xn--ogbhrq.vip/wp-content/uploads/2026/03/concrete5.png' },
-  { id: 'signals', name: 'قواعد الإشارات', imageUrl: 'https://xn--ogbhrq.vip/wp-content/uploads/2026/03/concrete8.png' },
-  { id: 'manholes', name: 'المناهل والحلقات', imageUrl: 'https://xn--ogbhrq.vip/wp-content/uploads/2026/03/concrete1.png' },
-  { id: 'car-stoppers', name: 'مصدات السيارات', imageUrl: 'https://xn--ogbhrq.vip/wp-content/uploads/2026/03/concrete7.png' },
-  { id: 'benches', name: 'كراسي تجميلية', imageUrl: 'https://xn--ogbhrq.vip/wp-content/uploads/2026/03/concrete2.png' },
-  { id: 'planters', name: 'أحواض زهور', imageUrl: 'https://xn--ogbhrq.vip/wp-content/uploads/2026/03/concrete3.png' }
+export const CATEGORIES: Category[] = [
+  { id: 'barriers', name: 'حواجز الطرق', enName: 'Road Barriers', imageUrl: 'https://xn--ogbhrq.vip/wp-content/uploads/2026/03/concrete6.png' },
+  { id: 'lighting', name: 'قواعد الإنارة', enName: 'Lighting Bases', imageUrl: 'https://xn--ogbhrq.vip/wp-content/uploads/2026/03/concrete5.png' },
+  { id: 'manholes', name: 'المناهل والحلقات', enName: 'Manholes & Rings', imageUrl: 'https://xn--ogbhrq.vip/wp-content/uploads/2026/03/concrete1.png' },
+  { id: 'benches', name: 'كراسي تجميلية', enName: 'Decorative Benches', imageUrl: 'https://xn--ogbhrq.vip/wp-content/uploads/2026/03/concrete2.png' }
 ];
