@@ -7,14 +7,22 @@ import { MessageSquare, X, Send, Loader2 } from 'lucide-react';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Input } from '@/components/ui/input';
 import { cn } from '@/lib/utils';
+import { useLanguage } from '@/components/LanguageProvider';
 
 export function AIChatbot() {
+  const { t, dir } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
   const [query, setQuery] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const [messages, setMessages] = useState<{ role: 'user' | 'ai'; content: string }[]>([
-    { role: 'ai', content: 'مرحباً بكم في كونكريت! كيف يمكنني مساعدتكم اليوم فيما يخص منتجاتنا وخدماتنا الخرسانية؟' }
-  ]);
+  const [messages, setMessages] = useState<{ role: 'user' | 'ai'; content: string }[]>([]);
+
+  // Initialize messages based on current language
+  useEffect(() => {
+    setMessages([
+      { role: 'ai', content: t('bot_welcome') }
+    ]);
+  }, [t]);
+
   const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -35,14 +43,14 @@ export function AIChatbot() {
       const { response } = await aiChatbotSupport({ query: userMsg });
       setMessages(prev => [...prev, { role: 'ai', content: response }]);
     } catch (error) {
-      setMessages(prev => [...prev, { role: 'ai', content: 'عذراً، حدث خطأ ما. يرجى المحاولة لاحقاً.' }]);
+      setMessages(prev => [...prev, { role: 'ai', content: t('bot_error') }]);
     } finally {
       setIsLoading(false);
     }
   };
 
   return (
-    <div className="fixed bottom-6 left-6 z-50">
+    <div className={`fixed bottom-6 ${dir === 'rtl' ? 'left-6' : 'right-6 md:right-auto md:left-6'} z-50`}>
       {!isOpen ? (
         <Button 
           onClick={() => setIsOpen(true)}
@@ -51,13 +59,13 @@ export function AIChatbot() {
           <MessageSquare className="h-5 w-5 md:h-6 md:w-6" />
         </Button>
       ) : (
-        <div className="bg-card border rounded-xl shadow-2xl w-[85vw] sm:w-[350px] md:w-[400px] flex flex-col h-[70vh] md:h-[500px] overflow-hidden animate-in slide-in-from-bottom-5 text-right">
+        <div className={`bg-card border rounded-xl shadow-2xl w-[85vw] sm:w-[350px] md:w-[400px] flex flex-col h-[70vh] md:h-[500px] overflow-hidden animate-in slide-in-from-bottom-5 ${dir === 'rtl' ? 'text-right' : 'text-left'}`}>
           <div className="bg-primary p-3 md:p-4 flex items-center justify-between text-primary-foreground">
             <Button variant="ghost" size="icon" className="h-8 w-8 text-primary-foreground hover:bg-primary-foreground/10" onClick={() => setIsOpen(false)}>
               <X className="h-5 w-5" />
             </Button>
             <div className="flex items-center gap-2">
-              <span className="font-headline font-bold text-sm md:text-base">دعم كونكريت الذكي</span>
+              <span className="font-headline font-bold text-sm md:text-base">{t('bot_title')}</span>
               <MessageSquare className="h-4 w-4 md:h-5 md:w-5 text-accent" />
             </div>
           </div>
@@ -70,16 +78,16 @@ export function AIChatbot() {
                   className={cn(
                     "max-w-[85%] rounded-lg p-2.5 md:p-3 text-xs md:text-sm",
                     msg.role === 'user' 
-                      ? "mr-auto bg-accent text-accent-foreground ml-0" 
-                      : "ml-auto bg-muted text-muted-foreground mr-0"
+                      ? (dir === 'rtl' ? "mr-auto bg-accent text-accent-foreground ml-0" : "ml-auto bg-accent text-accent-foreground mr-0")
+                      : (dir === 'rtl' ? "ml-auto bg-muted text-muted-foreground mr-0" : "mr-auto bg-muted text-muted-foreground ml-0")
                   )}
                 >
                   {msg.content}
                 </div>
               ))}
               {isLoading && (
-                <div className="ml-auto bg-muted rounded-lg p-2.5 md:p-3 flex items-center gap-2">
-                  <span className="text-[10px] md:text-xs">جاري التفكير...</span>
+                <div className={`${dir === 'rtl' ? 'ml-auto' : 'mr-auto'} bg-muted rounded-lg p-2.5 md:p-3 flex items-center gap-2`}>
+                  <span className="text-[10px] md:text-xs">{t('bot_thinking')}</span>
                   <Loader2 className="h-3 w-3 md:h-4 md:w-4 animate-spin text-accent" />
                 </div>
               )}
@@ -88,14 +96,14 @@ export function AIChatbot() {
 
           <div className="p-3 md:p-4 border-t flex gap-2">
             <Button size="icon" className="h-9 w-9 md:h-10 md:w-10" onClick={handleSend} disabled={isLoading || !query.trim()}>
-              <Send className="h-4 w-4 rotate-180" />
+              <Send className={`h-4 w-4 ${dir === 'rtl' ? 'rotate-180' : ''}`} />
             </Button>
             <Input 
-              placeholder="اسأل عن المنتجات..." 
+              placeholder={t('bot_placeholder')} 
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               onKeyDown={(e) => e.key === 'Enter' && handleSend()}
-              className="flex-1 text-right h-9 md:h-10 text-sm"
+              className={`flex-1 ${dir === 'rtl' ? 'text-right' : 'text-left'} h-9 md:h-10 text-sm`}
             />
           </div>
         </div>
