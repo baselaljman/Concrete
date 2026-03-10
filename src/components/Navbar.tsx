@@ -2,10 +2,8 @@
 'use client';
 
 import Link from 'next/link';
-import { useCart } from './CartProvider';
-import { ShoppingCart, User, Search, Construction, Menu } from 'lucide-react';
+import { User, Search, Construction, Menu } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -15,7 +13,6 @@ import {
 import { useState } from 'react';
 
 export function Navbar() {
-  const { totalItems } = useCart();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
@@ -49,17 +46,6 @@ export function Navbar() {
               <Search className="h-5 w-5" />
             </Button>
           </Link>
-          
-          <Link href="/cart">
-            <Button variant="ghost" size="icon" className="relative">
-              <ShoppingCart className="h-5 w-5" />
-              {totalItems > 0 && (
-                <Badge className="absolute -top-1 -right-1 h-5 w-5 flex items-center justify-center p-0 text-[10px] bg-accent">
-                  {totalItems}
-                </Badge>
-              )}
-            </Button>
-          </Link>
 
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
@@ -70,9 +56,6 @@ export function Navbar() {
             <DropdownMenuContent align="start" className="w-48">
               <DropdownMenuItem asChild>
                 <Link href="/profile">الملف الشخصي</Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem asChild>
-                <Link href="/profile/orders">طلباتي</Link>
               </DropdownMenuItem>
               <DropdownMenuItem className="text-destructive text-right">تسجيل الخروج</DropdownMenuItem>
             </DropdownMenuContent>

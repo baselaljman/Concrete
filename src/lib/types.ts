@@ -4,13 +4,9 @@ export interface Product {
   name: string;
   category: 'lighting' | 'manholes' | 'barriers' | 'benches' | 'car-stoppers';
   description: string;
-  price: number;
+  price?: number; // Price optional since it's a catalog
   specifications: string[];
   imageUrl: string;
   dimensions: string;
   material: string;
-}
-
-export interface CartItem extends Product {
-  quantity: number;
 }

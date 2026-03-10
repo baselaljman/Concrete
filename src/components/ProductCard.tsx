@@ -4,15 +4,12 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Product } from '@/lib/types';
-import { useCart } from './CartProvider';
 import { Card, CardContent, CardFooter } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { ShoppingCart, Eye } from 'lucide-react';
+import { Eye, MessageCircle } from 'lucide-react';
 
 export function ProductCard({ product }: { product: Product }) {
-  const { addToCart } = useCart();
-
   return (
     <Card className="group overflow-hidden border-none shadow-md hover:shadow-xl transition-all duration-300 text-right">
       <Link href={`/products/${product.id}`} className="block relative aspect-video overflow-hidden">
@@ -35,26 +32,28 @@ export function ProductCard({ product }: { product: Product }) {
           {product.description}
         </p>
         <div className="mt-4 flex items-center justify-between flex-row-reverse">
-          <span className="text-xl font-bold text-primary">{product.price} ريال</span>
-          <span className="text-xs text-muted-foreground">{product.dimensions}</span>
+          <span className="text-sm font-bold text-primary">{product.dimensions}</span>
+          <span className="text-xs text-muted-foreground">{product.material}</span>
         </div>
       </CardContent>
       <CardFooter className="p-4 pt-0 flex gap-2">
         <Button 
-          size="sm" 
-          className="flex-1 gap-2 bg-primary hover:bg-primary/90"
-          onClick={() => addToCart(product)}
-        >
-          <ShoppingCart className="h-4 w-4" /> شراء
-        </Button>
-        <Button 
-          variant="outline" 
+          variant="outline"
           size="sm" 
           className="flex-1 gap-2"
           asChild
         >
           <Link href={`/products/${product.id}`}>
             <Eye className="h-4 w-4" /> التفاصيل
+          </Link>
+        </Button>
+        <Button 
+          size="sm" 
+          className="flex-1 gap-2 bg-accent hover:bg-accent/90"
+          asChild
+        >
+          <Link href="/contact">
+            <MessageCircle className="h-4 w-4" /> طلب عرض سعر
           </Link>
         </Button>
       </CardFooter>

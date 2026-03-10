@@ -4,17 +4,15 @@
 import { useParams, useRouter } from 'next/navigation';
 import { PRODUCTS } from '@/lib/data';
 import Image from 'next/image';
-import { useCart } from '@/components/CartProvider';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { ShoppingCart, ArrowRight, Truck, ShieldCheck, Construction, FileText } from 'lucide-react';
+import { ArrowRight, Truck, ShieldCheck, Construction, FileText, MessageCircle } from 'lucide-react';
 import Link from 'next/link';
 
 export default function ProductDetailPage() {
   const params = useParams();
   const router = useRouter();
-  const { addToCart } = useCart();
   
   const product = PRODUCTS.find(p => p.id === params.id);
 
@@ -25,7 +23,7 @@ export default function ProductDetailPage() {
   return (
     <div className="container mx-auto px-4 py-12 text-right">
       <Button variant="ghost" onClick={() => router.back()} className="mb-8 gap-2">
-        <ArrowRight className="h-4 w-4" /> عودة
+        <ArrowRight className="h-4 w-4" /> عودة للكتالوج
       </Button>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
@@ -46,7 +44,6 @@ export default function ProductDetailPage() {
               </Badge>
             </div>
             <h1 className="text-4xl md:text-5xl font-headline font-bold text-primary">{product.name}</h1>
-            <p className="text-xl font-bold text-accent">{product.price}.00 ريال للوحدة</p>
           </div>
 
           <p className="text-lg text-muted-foreground leading-relaxed">
@@ -71,13 +68,15 @@ export default function ProductDetailPage() {
           </div>
 
           <div className="flex gap-4 mt-4">
-            <Button size="lg" className="flex-1 h-14 text-lg bg-primary gap-2" onClick={() => addToCart(product)}>
-              <ShoppingCart className="h-5 w-5" /> إضافة للسلة
+            <Button size="lg" className="flex-1 h-14 text-lg bg-primary gap-2" asChild>
+              <Link href="/contact">
+                <MessageCircle className="h-5 w-5" /> تواصل لطلب عرض سعر
+              </Link>
             </Button>
           </div>
 
           <div className="flex items-center justify-end gap-2 text-sm text-muted-foreground mt-4">
-            <span>توصيل آمن للموقع خلال 3-5 أيام عمل.</span>
+            <span>توصيل آمن للموقع متاح لجميع المشاريع.</span>
             <Truck className="h-4 w-4" /> 
           </div>
         </div>
@@ -106,8 +105,8 @@ export default function ProductDetailPage() {
            <div className="max-w-2xl space-y-4 text-muted-foreground mr-auto">
               <p>نحن نوفر خدمة التوصيل لجميع أنحاء المملكة باستخدام مركبات ثقيلة متخصصة مجهزة برافعات للتفريغ الآمن. يتولى فريقنا اللوجستي جميع التصاريح اللازمة للوصول إلى الموقع.</p>
               <ul className="list-disc list-inside space-y-1 text-sm text-right">
-                <li>خصومات متاحة للطلبات بالجملة</li>
-                <li>فحص وصول الموقع متضمن للطلبات الكبيرة</li>
+                <li>خصومات متاحة للطلبات الكبيرة</li>
+                <li>فحص وصول الموقع متضمن للمشاريع الضخمة</li>
                 <li>إخطار جدولة قياسي قبل 48 ساعة</li>
               </ul>
            </div>
