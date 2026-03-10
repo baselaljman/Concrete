@@ -36,6 +36,12 @@
       "description": "Concrete car wheel stoppers in a parking lot",
       "imageUrl": "https://xn--ogbhrq.vip/wp-content/uploads/2026/03/concrete7.png",
       "imageHint": "parking stopper"
+    },
+    {
+      "id": "quality-section",
+      "description": "صورة تعبيرية عن جودة الإنتاج في المصنع",
+      "imageUrl": "https://xn--ogbhrq.vip/wp-content/uploads/2026/03/concrete9.png",
+      "imageHint": "concrete factory"
     }
   ]
 }

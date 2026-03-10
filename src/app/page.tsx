@@ -7,10 +7,11 @@ import { Button } from '@/components/ui/button';
 import { PRODUCTS, CATEGORIES } from '@/lib/data';
 import { ProductCard } from '@/components/ProductCard';
 import { PlaceHolderImages } from '@/app/lib/placeholder-images';
-import { Truck, Zap, Shield, ArrowLeft, Construction, Mail } from 'lucide-react';
+import { Truck, Zap, Shield, ArrowLeft, Construction } from 'lucide-react';
 
 export default function Home() {
   const heroImg = PlaceHolderImages.find(img => img.id === 'hero-bg')?.imageUrl || '';
+  const qualityImg = PlaceHolderImages.find(img => img.id === 'quality-section')?.imageUrl || '';
 
   return (
     <div className="flex flex-col gap-20 pb-20">
@@ -26,13 +27,13 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-l from-primary/90 to-primary/40" />
         <div className="container mx-auto px-4 relative z-10 text-white">
           <div className="max-w-2xl space-y-6">
-            <h1 className="text-5xl md:text-7xl font-headline font-bold leading-tight">
+            <h1 className="text-5xl md:text-7xl font-headline font-bold leading-tight text-right">
               نبني القوة، <br/><span className="text-accent">نشكل التقدم</span>
             </h1>
-            <p className="text-xl text-primary-foreground/80 leading-relaxed">
+            <p className="text-xl text-primary-foreground/80 leading-relaxed text-right">
               حلول خرسانية متميزة للإنارة، سلامة الطرق، والتطوير الحضري. صُممت لتدوم، وسُلمت بدقة.
             </p>
-            <div className="flex flex-wrap gap-4 pt-4">
+            <div className="flex flex-wrap gap-4 pt-4 justify-end">
               <Button size="lg" className="bg-accent hover:bg-accent/90 text-white px-8 h-14 text-lg" asChild>
                 <Link href="/catalog">استكشف الكتالوج</Link>
               </Button>
@@ -50,8 +51,8 @@ export default function Home() {
           <h2 className="text-3xl font-headline font-bold text-primary">حلول متكاملة</h2>
           <p className="text-muted-foreground">مجموعة شاملة من المنتجات الخرسانية مسبقة الصب لكل احتياجات المشاريع.</p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
-          {CATEGORIES.map((cat) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {CATEGORIES.slice(0, 4).map((cat) => (
             <Link 
               key={cat.id} 
               href={`/catalog?category=${cat.id}`}
@@ -63,7 +64,7 @@ export default function Home() {
                   alt={cat.name} 
                   fill 
                   className="object-cover transition-transform group-hover:scale-110" 
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 20vw, 20vw"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 25vw, 25vw"
                 />
               </div>
               <div>
@@ -79,45 +80,44 @@ export default function Home() {
       <section className="bg-primary py-20 text-white">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8">
-              <h2 className="text-4xl font-headline font-bold">لماذا نحن مختلفون؟</h2>
+            <div className="space-y-8 order-2 lg:order-1">
+              <h2 className="text-4xl font-headline font-bold text-right">لماذا نحن مختلفون؟</h2>
               <div className="grid gap-6">
-                <div className="flex gap-4">
-                  <div className="h-10 w-10 bg-accent rounded-lg flex items-center justify-center shrink-0">
-                    <Zap className="h-6 w-6 text-white" />
-                  </div>
-                  <div>
+                <div className="flex gap-4 justify-end">
+                  <div className="text-right">
                     <h4 className="font-bold text-xl mb-1">تنوع هائل</h4>
                     <p className="text-primary-foreground/70">من قواعد الإنارة إلى مقاعد الحدائق، نقدم جميع الأحجام والأنواع المصممة حسب المعايير الهندسية.</p>
                   </div>
-                </div>
-                <div className="flex gap-4">
                   <div className="h-10 w-10 bg-accent rounded-lg flex items-center justify-center shrink-0">
-                    <Shield className="h-6 w-6 text-white" />
+                    <Zap className="h-6 w-6 text-white" />
                   </div>
-                  <div>
+                </div>
+                <div className="flex gap-4 justify-end">
+                  <div className="text-right">
                     <h4 className="font-bold text-xl mb-1">جودة معتمدة</h4>
                     <p className="text-primary-foreground/70">منتجاتنا تتبع أعلى المعايير الهندسية للمتانة والأداء طويل الأمد.</p>
                   </div>
-                </div>
-                <div className="flex gap-4">
                   <div className="h-10 w-10 bg-accent rounded-lg flex items-center justify-center shrink-0">
-                    <Truck className="h-6 w-6 text-white" />
+                    <Shield className="h-6 w-6 text-white" />
                   </div>
-                  <div>
+                </div>
+                <div className="flex gap-4 justify-end">
+                  <div className="text-right">
                     <h4 className="font-bold text-xl mb-1">سهولة الطلب والتوصيل</h4>
                     <p className="text-primary-foreground/70">تواصل مباشر وسريع مع قسم المبيعات وتوصيل آمن للموقع مباشرة.</p>
+                  </div>
+                  <div className="h-10 w-10 bg-accent rounded-lg flex items-center justify-center shrink-0">
+                    <Truck className="h-6 w-6 text-white" />
                   </div>
                 </div>
               </div>
             </div>
-            <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-2xl">
+            <div className="relative h-[450px] rounded-2xl overflow-hidden shadow-2xl order-1 lg:order-2">
               <Image 
-                src="https://picsum.photos/seed/concreate-quality/800/600" 
-                alt="Quality production" 
+                src={qualityImg} 
+                alt="جودة الإنتاج" 
                 fill 
                 className="object-cover"
-                data-ai-hint="concrete factory"
               />
             </div>
           </div>
@@ -159,7 +159,7 @@ export default function Home() {
               <Link href="/contact">اتصل بالمبيعات</Link>
             </Button>
             <Button size="lg" variant="secondary" className="px-8 h-14 font-bold text-primary" asChild>
-              <Link href="/about">اعرف المزيد عنا</Link>
+              <Link href="/contact">تواصل معنا</Link>
             </Button>
           </div>
         </div>
