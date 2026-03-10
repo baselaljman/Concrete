@@ -45,6 +45,20 @@ export const PRODUCTS: Product[] = [
     ],
     imageUrl: 'https://xn--ogbhrq.vip/wp-content/uploads/2026/03/concrete1.png',
     material: 'خرسانة مسلحة معتمدة'
+  },
+  {
+    id: 'concrete-car-stoppers',
+    name: 'مصدات ارضية',
+    category: 'car-stoppers',
+    description: 'هي كتلة خرسانية مستطيلة يتم صناعتها من حديد تسليح و خرسانة تستخدم هذه المصدات لتنظيم وقوف السيارات في اماكن الباركنق ويتوفر لدينا ايضاً النوع الثاني منها اللذي هو عبارة عن بلاستك مقوى مما يجعله قابل لتحمل الضغط.',
+    specifications: [
+      'تصنيع من خرسانة وحديد تسليح عالي الجودة',
+      'متوفرة بنوع بلاستيك مقوى يتحمل الضغط العالي',
+      'مثالية لتنظيم مواقف السيارات',
+      'متانة عالية ومقاومة للظروف الجوية'
+    ],
+    imageUrl: 'https://xn--ogbhrq.vip/wp-content/uploads/2026/03/concrete7.png',
+    material: 'خرسانة مسلحة / بلاستيك مقوى'
   }
 ];
 
@@ -52,6 +66,6 @@ export const CATEGORIES = [
   { id: 'barriers', name: 'حواجز الطرق', imageUrl: 'https://xn--ogbhrq.vip/wp-content/uploads/2026/03/concrete6.png' },
   { id: 'lighting', name: 'قواعد الإنارة', imageUrl: 'https://xn--ogbhrq.vip/wp-content/uploads/2026/03/concrete5.png' },
   { id: 'manholes', name: 'المناهل والحلقات', imageUrl: 'https://xn--ogbhrq.vip/wp-content/uploads/2026/03/concrete1.png' },
-  { id: 'benches', name: 'مقاعد الحدائق', imageUrl: getImg('bench') },
-  { id: 'car-stoppers', name: 'مصدات السيارات', imageUrl: getImg('car-stopper') }
+  { id: 'car-stoppers', name: 'مصدات السيارات', imageUrl: 'https://xn--ogbhrq.vip/wp-content/uploads/2026/03/concrete7.png' },
+  { id: 'benches', name: 'مقاعد الحدائق', imageUrl: getImg('bench') }
 ];
