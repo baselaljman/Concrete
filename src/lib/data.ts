@@ -1,7 +1,5 @@
-import { Product } from './types';
-import { PlaceHolderImages } from '@/app/lib/placeholder-images';
 
-const getImg = (id: string) => PlaceHolderImages.find(img => img.id === id)?.imageUrl || 'https://picsum.photos/600/400';
+import { Product } from './types';
 
 export const PRODUCTS: Product[] = [
   {
@@ -73,6 +71,20 @@ export const PRODUCTS: Product[] = [
     ],
     imageUrl: 'https://xn--ogbhrq.vip/wp-content/uploads/2026/03/concrete2.png',
     material: 'خرسانة تجميلية مع أحجار مميزة'
+  },
+  {
+    id: 'decorative-planters',
+    name: 'احواض زهور تجميلية',
+    category: 'planters',
+    description: 'هي عبارة عن خرسانة من نوع تجميلي مع انواع مميزة من الاحجار يتم صناعتها بعناية لتظهر بشكل يجمل المكان يتم وضع الزهور بداخلها و تستخدم للاماكن العامة كالحدائق و اماكن التجمعات و المستشفيات وغيرها.',
+    specifications: [
+      'تصميم جمالي فريد',
+      'متوفرة بأحجام وأشكال متنوعة',
+      'مقاومة عالية للرطوبة والعوامل الجوية',
+      'مثالية لتزيين المداخل والحدائق'
+    ],
+    imageUrl: 'https://xn--ogbhrq.vip/wp-content/uploads/2026/03/concrete3.png',
+    material: 'خرسانة تجميلية مع أحجار مميزة'
   }
 ];
 
@@ -81,5 +93,6 @@ export const CATEGORIES = [
   { id: 'lighting', name: 'قواعد الإنارة', imageUrl: 'https://xn--ogbhrq.vip/wp-content/uploads/2026/03/concrete5.png' },
   { id: 'manholes', name: 'المناهل والحلقات', imageUrl: 'https://xn--ogbhrq.vip/wp-content/uploads/2026/03/concrete1.png' },
   { id: 'car-stoppers', name: 'مصدات السيارات', imageUrl: 'https://xn--ogbhrq.vip/wp-content/uploads/2026/03/concrete7.png' },
-  { id: 'benches', name: 'كراسي تجميلية', imageUrl: 'https://xn--ogbhrq.vip/wp-content/uploads/2026/03/concrete2.png' }
+  { id: 'benches', name: 'كراسي تجميلية', imageUrl: 'https://xn--ogbhrq.vip/wp-content/uploads/2026/03/concrete2.png' },
+  { id: 'planters', name: 'أحواض زهور', imageUrl: 'https://xn--ogbhrq.vip/wp-content/uploads/2026/03/concrete3.png' }
 ];
