@@ -59,6 +59,20 @@ export const PRODUCTS: Product[] = [
     ],
     imageUrl: 'https://xn--ogbhrq.vip/wp-content/uploads/2026/03/concrete7.png',
     material: 'خرسانة مسلحة / بلاستيك مقوى'
+  },
+  {
+    id: 'decorative-benches',
+    name: 'كراسي تجميلية',
+    category: 'benches',
+    description: 'هي عبارة عن خرسانة من نوع تجميلي مع انواع مميزة من الاحجار يتم صناعتها بعناية لتظهر بشكل يجمل المكان و تستخدم للاماكن العامة كالحدائق و اماكن التجمعات و المستشفيات وغيرها.',
+    specifications: [
+      'خرسانة تجميلية عالية الجودة',
+      'أحجار مميزة وتصاميم فنية',
+      'صناعة يدوية بعناية فائقة',
+      'مقاومة للعوامل الجوية وتجمل المكان'
+    ],
+    imageUrl: 'https://xn--ogbhrq.vip/wp-content/uploads/2026/03/concrete2.png',
+    material: 'خرسانة تجميلية مع أحجار مميزة'
   }
 ];
 
@@ -67,5 +81,5 @@ export const CATEGORIES = [
   { id: 'lighting', name: 'قواعد الإنارة', imageUrl: 'https://xn--ogbhrq.vip/wp-content/uploads/2026/03/concrete5.png' },
   { id: 'manholes', name: 'المناهل والحلقات', imageUrl: 'https://xn--ogbhrq.vip/wp-content/uploads/2026/03/concrete1.png' },
   { id: 'car-stoppers', name: 'مصدات السيارات', imageUrl: 'https://xn--ogbhrq.vip/wp-content/uploads/2026/03/concrete7.png' },
-  { id: 'benches', name: 'مقاعد الحدائق', imageUrl: getImg('bench') }
+  { id: 'benches', name: 'كراسي تجميلية', imageUrl: 'https://xn--ogbhrq.vip/wp-content/uploads/2026/03/concrete2.png' }
 ];
