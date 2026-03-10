@@ -5,12 +5,13 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { PRODUCTS, CATEGORIES } from '@/lib/data';
 import { ProductCard } from '@/components/ProductCard';
-import { PlaceHolderImages } from '@/app/lib/placeholder-images';
 import { Truck, Zap, Shield, ArrowLeft, Construction } from 'lucide-react';
 
 export default function Home() {
   const heroImg = 'https://xn--ogbhrq.vip/wp-content/uploads/2026/03/concrete4.png';
   const qualityImg = 'https://xn--ogbhrq.vip/wp-content/uploads/2026/03/concrete9.png';
+  const phoneNumber = '0552076668';
+  const whatsappNumber = '966552076668';
 
   return (
     <div className="flex flex-col gap-20 pb-20">
@@ -37,7 +38,7 @@ export default function Home() {
                 <Link href="/catalog">استكشف الكتالوج</Link>
               </Button>
               <Button size="lg" variant="outline" className="text-white border-white hover:bg-white/10 h-14 text-lg" asChild>
-                <Link href="/contact">تواصل معنا</Link>
+                <a href={`https://wa.me/${whatsappNumber}`} target="_blank" rel="noopener noreferrer">تواصل معنا</a>
               </Button>
             </div>
           </div>
@@ -155,10 +156,10 @@ export default function Home() {
           </div>
           <div className="relative z-10 flex flex-col sm:flex-row gap-4">
             <Button size="lg" className="bg-primary text-white border-none px-8 h-14 font-bold" asChild>
-              <Link href="/contact">اتصل بالمبيعات</Link>
+              <a href={`tel:${phoneNumber}`}>اتصل بالمبيعات</a>
             </Button>
             <Button size="lg" variant="secondary" className="px-8 h-14 font-bold text-primary" asChild>
-              <Link href="/contact">تواصل معنا</Link>
+              <a href={`https://wa.me/${whatsappNumber}`} target="_blank" rel="noopener noreferrer">تواصل معنا</a>
             </Button>
           </div>
         </div>
