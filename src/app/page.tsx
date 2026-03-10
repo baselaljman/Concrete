@@ -124,28 +124,18 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Featured Products */}
+      {/* Featured Products - Now showing all products */}
       <section className="container mx-auto px-4">
         <div className="flex flex-col sm:flex-row justify-between items-end mb-8 md:mb-12 gap-4">
           <div className="space-y-2 text-right w-full">
-            <h2 className="text-2xl md:text-3xl font-headline font-bold text-primary">منتجات مميزة</h2>
-            <p className="text-sm md:text-base text-muted-foreground">اكتشف حلولنا الخرسانية الأكثر رواجاً.</p>
+            <h2 className="text-2xl md:text-3xl font-headline font-bold text-primary">منتجاتنا</h2>
+            <p className="text-sm md:text-base text-muted-foreground">اكتشف مجموعتنا الكاملة من الحلول الخرسانية.</p>
           </div>
-          <Button variant="link" className="text-accent text-lg hidden sm:flex" asChild>
-            <Link href="/catalog" className="group">
-              عرض كل المنتجات <ArrowLeft className="mr-2 h-4 w-4 group-hover:-translate-x-1 transition-transform" />
-            </Link>
-          </Button>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          {PRODUCTS.slice(0, 3).map((product) => (
+          {PRODUCTS.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
-        </div>
-        <div className="mt-8 text-center sm:hidden">
-          <Button variant="outline" className="w-full text-accent border-accent" asChild>
-            <Link href="/catalog">عرض كل المنتجات</Link>
-          </Button>
         </div>
       </section>
 
