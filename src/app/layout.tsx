@@ -5,7 +5,7 @@ import { Footer } from '@/components/Footer';
 import { Toaster } from '@/components/ui/toaster';
 
 export const metadata: Metadata = {
-  title: 'كونكريت سولوشنز | حلول خرسانية متميزة',
+  title: 'كونكريت | حلول خرسانية متميزة',
   description: 'حلول خرسانية متكاملة لمشاريعكم بكفاءة وجودة عالية.',
 };
 

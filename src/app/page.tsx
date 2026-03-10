@@ -1,4 +1,3 @@
-
 'use client';
 
 import Link from 'next/link';
@@ -10,8 +9,8 @@ import { PlaceHolderImages } from '@/app/lib/placeholder-images';
 import { Truck, Zap, Shield, ArrowLeft, Construction } from 'lucide-react';
 
 export default function Home() {
-  const heroImg = PlaceHolderImages.find(img => img.id === 'hero-bg')?.imageUrl || '';
-  const qualityImg = PlaceHolderImages.find(img => img.id === 'quality-section')?.imageUrl || '';
+  const heroImg = 'https://xn--ogbhrq.vip/wp-content/uploads/2026/03/concrete4.png';
+  const qualityImg = 'https://xn--ogbhrq.vip/wp-content/uploads/2026/03/concrete9.png';
 
   return (
     <div className="flex flex-col gap-20 pb-20">
@@ -19,7 +18,7 @@ export default function Home() {
       <section className="relative h-[85vh] flex items-center overflow-hidden">
         <Image 
           src={heroImg} 
-          alt="Concrete Solutions" 
+          alt="Concrete" 
           fill 
           priority
           className="object-cover"

@@ -1,4 +1,3 @@
-
 import Link from 'next/link';
 import { Construction, Mail, Phone, MapPin, Facebook, Instagram, Linkedin } from 'lucide-react';
 
@@ -9,11 +8,11 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="space-y-4">
             <Link href="/" className="flex items-center gap-2 justify-end">
-              <span className="font-headline font-bold text-xl">كونكريت سولوشنز</span>
+              <span className="font-headline font-bold text-xl">كونكريت</span>
               <Construction className="h-6 w-6 text-accent" />
             </Link>
             <p className="text-sm text-primary-foreground/70 leading-relaxed">
-              نقدم حلولاً خرسانية متكاملة لمشاريعكم بكفاءة وجودة عالية. نحن لا نبيع فقط، بل نضمن تجربة فريدة من اختيار المنتج إلى التسليم.
+              نقدم حلولاً خرسانية متكاملة لمشاريعكم بكفاءة وجودة عالية. نحن نضمن تجربة فريدة من اختيار المنتج إلى التسليم.
             </p>
             <div className="flex items-center gap-4 justify-end">
               <Link href="#" className="hover:text-accent transition-colors"><Facebook className="h-5 w-5" /></Link>
@@ -34,10 +33,10 @@ export function Footer() {
           <div>
             <h3 className="font-headline font-bold text-lg mb-4">الفئات</h3>
             <ul className="space-y-2 text-sm text-primary-foreground/70">
-              <li><Link href="/catalog?cat=lighting" className="hover:text-accent transition-colors">قواعد الإنارة</Link></li>
-              <li><Link href="/catalog?cat=manholes" className="hover:text-accent transition-colors">المناهل والحلقات</Link></li>
-              <li><Link href="/catalog?cat=barriers" className="hover:text-accent transition-colors">حواجز الطرق</Link></li>
-              <li><Link href="/catalog?cat=benches" className="hover:text-accent transition-colors">المقاعد الحضرية</Link></li>
+              <li><Link href="/catalog?category=lighting" className="hover:text-accent transition-colors">قواعد الإنارة</Link></li>
+              <li><Link href="/catalog?category=manholes" className="hover:text-accent transition-colors">المناهل والحلقات</Link></li>
+              <li><Link href="/catalog?category=barriers" className="hover:text-accent transition-colors">حواجز الطرق</Link></li>
+              <li><Link href="/catalog?category=benches" className="hover:text-accent transition-colors">المقاعد الحضرية</Link></li>
             </ul>
           </div>
 
@@ -52,14 +51,14 @@ export function Footer() {
               <Phone className="h-5 w-5 text-accent shrink-0" />
             </div>
             <div className="flex items-center gap-3 text-sm text-primary-foreground/70 justify-end">
-              <span>info@concreatesolutions.com</span>
+              <span>info@concreate.com</span>
               <Mail className="h-5 w-5 text-accent shrink-0" />
             </div>
           </div>
         </div>
         
         <div className="mt-12 pt-8 border-t border-primary-foreground/10 text-center text-sm text-primary-foreground/50">
-          <p>© {new Date().getFullYear()} كونكريت سولوشنز. جميع الحقوق محفوظة.</p>
+          <p>© {new Date().getFullYear()} كونكريت. جميع الحقوق محفوظة.</p>
         </div>
       </div>
     </footer>
