@@ -31,13 +31,27 @@ export const PRODUCTS: Product[] = [
     ],
     imageUrl: 'https://xn--ogbhrq.vip/wp-content/uploads/2026/03/concrete5.png',
     material: 'خرسانة مسلحة معتمدة'
+  },
+  {
+    id: 'concrete-manholes',
+    name: 'مناهل ارضية (للصرف الصحي-لتمديدات الكهرباء)',
+    category: 'manholes',
+    description: 'تتوفر بجميع انواعها و مقاساتها حسب الطلب. هذه المناهل هي عبارة عن خرسانة مع حديد تسليح يتم صبها في قوالب حسب الطلب والمعايير المتفق عليها ويتم عزلها بمواد لتصبح جاهزة للتوريد.',
+    specifications: [
+      'صب في قوالب مخصصة حسب الطلب',
+      'حديد تسليح عالي المتانة',
+      'مطابقة للمعايير الهندسية المتفق عليها',
+      'عزل كامل ضد التسريب والظروف الأرضية'
+    ],
+    imageUrl: 'https://xn--ogbhrq.vip/wp-content/uploads/2026/03/concrete1.png',
+    material: 'خرسانة مسلحة معتمدة'
   }
 ];
 
 export const CATEGORIES = [
   { id: 'barriers', name: 'حواجز الطرق', imageUrl: 'https://xn--ogbhrq.vip/wp-content/uploads/2026/03/concrete6.png' },
   { id: 'lighting', name: 'قواعد الإنارة', imageUrl: 'https://xn--ogbhrq.vip/wp-content/uploads/2026/03/concrete5.png' },
-  { id: 'manholes', name: 'المناهل والحلقات', imageUrl: getImg('manhole') },
+  { id: 'manholes', name: 'المناهل والحلقات', imageUrl: 'https://xn--ogbhrq.vip/wp-content/uploads/2026/03/concrete1.png' },
   { id: 'benches', name: 'مقاعد الحدائق', imageUrl: getImg('bench') },
   { id: 'car-stoppers', name: 'مصدات السيارات', imageUrl: getImg('car-stopper') }
 ];
