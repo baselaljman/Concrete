@@ -31,6 +31,20 @@ export const PRODUCTS: Product[] = [
     material: 'خرسانة مسلحة معتمدة'
   },
   {
+    id: 'concrete-signal-bases',
+    name: 'قواعد اشارة',
+    category: 'signals',
+    description: 'تختلف احجامها وانواعها حسب الطلب، تستخدم هذه القواعد لتثبيت اعمدة اشارات الطريق في الطرقات السريعة وداخل المدينة و تثبت اعمدة كميرات المراقبة و غيرها من الاستخدامات الكثيرة. وهي قواعد مصنوعة من الخرسانة المسلحة و لها قدرة تحمل ضغط ويتم عزلها بمواد مانعة لدخول الماء لها.',
+    specifications: [
+      'خرسانة مسلحة معتمدة',
+      'تستخدم لإشارات الطريق وكاميرات المراقبة',
+      'مقاومة عالية للضغط والظروف الجوية',
+      'عزل كامل ضد تسرب المياه'
+    ],
+    imageUrl: 'https://xn--ogbhrq.vip/wp-content/uploads/2026/03/concrete8.png',
+    material: 'خرسانة مسلحة معتمدة'
+  },
+  {
     id: 'concrete-manholes',
     name: 'مناهل ارضية (للصرف الصحي-لتمديدات الكهرباء)',
     category: 'manholes',
@@ -91,6 +105,7 @@ export const PRODUCTS: Product[] = [
 export const CATEGORIES = [
   { id: 'barriers', name: 'حواجز الطرق', imageUrl: 'https://xn--ogbhrq.vip/wp-content/uploads/2026/03/concrete6.png' },
   { id: 'lighting', name: 'قواعد الإنارة', imageUrl: 'https://xn--ogbhrq.vip/wp-content/uploads/2026/03/concrete5.png' },
+  { id: 'signals', name: 'قواعد الإشارات', imageUrl: 'https://xn--ogbhrq.vip/wp-content/uploads/2026/03/concrete8.png' },
   { id: 'manholes', name: 'المناهل والحلقات', imageUrl: 'https://xn--ogbhrq.vip/wp-content/uploads/2026/03/concrete1.png' },
   { id: 'car-stoppers', name: 'مصدات السيارات', imageUrl: 'https://xn--ogbhrq.vip/wp-content/uploads/2026/03/concrete7.png' },
   { id: 'benches', name: 'كراسي تجميلية', imageUrl: 'https://xn--ogbhrq.vip/wp-content/uploads/2026/03/concrete2.png' },

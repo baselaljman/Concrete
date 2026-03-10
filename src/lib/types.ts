@@ -2,7 +2,7 @@
 export interface Product {
   id: string;
   name: string;
-  category: 'lighting' | 'manholes' | 'barriers' | 'benches' | 'car-stoppers' | 'planters';
+  category: 'lighting' | 'manholes' | 'barriers' | 'benches' | 'car-stoppers' | 'planters' | 'signals';
   description: string;
   price?: number; // Price optional since it's a catalog
   specifications: string[];
