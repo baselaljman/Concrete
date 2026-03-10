@@ -34,10 +34,10 @@ export default function Home() {
               حلول خرسانية متميزة للإنارة، سلامة الطرق، والتطوير الحضري. صُممت لتدوم، وسُلمت بدقة.
             </p>
             <div className="flex flex-wrap gap-4 pt-4 justify-end">
-              <Button size="lg" className="bg-accent hover:bg-accent/90 text-white px-8 h-14 text-lg" asChild>
+              <Button size="lg" className="bg-accent hover:bg-accent/90 text-white px-8 h-14 text-lg font-bold" asChild>
                 <Link href="/catalog">استكشف الكتالوج</Link>
               </Button>
-              <Button size="lg" variant="outline" className="text-white border-white hover:bg-white/10 h-14 text-lg" asChild>
+              <Button size="lg" variant="secondary" className="px-8 h-14 text-lg font-bold text-primary" asChild>
                 <a href={`https://wa.me/${whatsappNumber}`} target="_blank" rel="noopener noreferrer">تواصل معنا</a>
               </Button>
             </div>
@@ -155,10 +155,10 @@ export default function Home() {
             <p className="text-lg opacity-90">فريقنا الهندسي جاهز لمساعدتك في اختيار المنتجات الأنسب لمواصفات مشروعك الفنية.</p>
           </div>
           <div className="relative z-10 flex flex-col sm:flex-row gap-4">
-            <Button size="lg" className="bg-primary text-white border-none px-8 h-14 font-bold" asChild>
+            <Button size="lg" className="bg-primary text-white border-none px-8 h-14 font-bold shadow-lg" asChild>
               <a href={`tel:${phoneNumber}`}>اتصل بالمبيعات</a>
             </Button>
-            <Button size="lg" variant="secondary" className="px-8 h-14 font-bold text-primary" asChild>
+            <Button size="lg" variant="secondary" className="px-8 h-14 font-bold text-primary shadow-lg" asChild>
               <a href={`https://wa.me/${whatsappNumber}`} target="_blank" rel="noopener noreferrer">تواصل معنا</a>
             </Button>
           </div>
