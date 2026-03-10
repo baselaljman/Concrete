@@ -31,8 +31,7 @@ export function ProductCard({ product }: { product: Product }) {
         <p className="text-sm text-muted-foreground mt-2 line-clamp-2">
           {product.description}
         </p>
-        <div className="mt-4 flex items-center justify-between flex-row-reverse">
-          <span className="text-sm font-bold text-primary">{product.dimensions}</span>
+        <div className="mt-4 flex items-center justify-end flex-row-reverse">
           <span className="text-xs text-muted-foreground">{product.material}</span>
         </div>
       </CardContent>

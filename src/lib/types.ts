@@ -7,6 +7,5 @@ export interface Product {
   price?: number; // Price optional since it's a catalog
   specifications: string[];
   imageUrl: string;
-  dimensions: string;
   material: string;
 }

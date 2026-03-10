@@ -13,7 +13,6 @@ export const PRODUCTS: Product[] = [
     price: 450,
     specifications: ['فئة الخرسانة: C35/45', 'التسليح: فولاذ عالي الشد', 'التشطيب: خرسانة طبيعية ناعمة'],
     imageUrl: getImg('lighting-base'),
-    dimensions: '500x500x1200 مم',
     material: 'خرسانة مسلحة'
   },
   {
@@ -24,7 +23,6 @@ export const PRODUCTS: Product[] = [
     price: 320,
     specifications: ['امتصاص الماء: <5%', 'فئة التحميل: D400', 'طلاء داخلي: إيبوكسي اختياري'],
     imageUrl: getImg('manhole'),
-    dimensions: 'قطر داخلي 1000 مم',
     material: 'خرسانة شديدة التحمل'
   },
   {
@@ -35,7 +33,6 @@ export const PRODUCTS: Product[] = [
     price: 680,
     specifications: ['مقاومة الصدمات: عالية', 'تصميم متداخل', 'مسبق الصب للنشر السريع'],
     imageUrl: getImg('barrier'),
-    dimensions: '3000x600x810 مم',
     material: 'خرسانة C40/50'
   },
   {
@@ -46,7 +43,6 @@ export const PRODUCTS: Product[] = [
     price: 1200,
     specifications: ['تصميم مريح', 'طلاء مضاد للكتابة', 'لا يتطلب صيانة'],
     imageUrl: getImg('bench'),
-    dimensions: '1800x450x450 مم',
     material: 'خرسانة معمارية مصقولة'
   },
   {
@@ -57,7 +53,6 @@ export const PRODUCTS: Product[] = [
     price: 85,
     specifications: ['علامات رؤية عالية', 'ثقوب تثبيت متضمنة', 'مقاوم للكبريتات'],
     imageUrl: getImg('car-stopper'),
-    dimensions: '1500x150x120 مم',
     material: 'خرسانة معززة بالألياف'
   },
   {
@@ -68,7 +63,6 @@ export const PRODUCTS: Product[] = [
     price: 550,
     specifications: ['تشطيب جمالي', 'مدخل كابل متكامل', 'ألوان مخصصة متاحة'],
     imageUrl: getImg('lighting-base'),
-    dimensions: '400x400x1000 مم',
     material: 'خرسانة معمارية'
   }
 ];

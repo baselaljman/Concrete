@@ -7,7 +7,7 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { ArrowRight, Truck, ShieldCheck, Construction, FileText, MessageCircle } from 'lucide-react';
+import { ArrowRight, Truck, ShieldCheck, FileText, MessageCircle } from 'lucide-react';
 import Link from 'next/link';
 
 export default function ProductDetailPage() {
@@ -50,20 +50,13 @@ export default function ProductDetailPage() {
             {product.description}
           </p>
 
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 gap-4">
              <div className="p-4 bg-muted rounded-xl flex items-center justify-end gap-3">
                 <div className="text-right">
                    <p className="text-xs text-muted-foreground">المادة</p>
                    <p className="font-bold">{product.material}</p>
                 </div>
-                <ShieldCheck className="h-6 w-6 text-primary" />
-             </div>
-             <div className="p-4 bg-muted rounded-xl flex items-center justify-end gap-3">
-                <div className="text-right">
-                   <p className="text-xs text-muted-foreground">الأبعاد</p>
-                   <p className="font-bold">{product.dimensions}</p>
-                </div>
-                <Construction className="h-6 w-6 text-primary" />
+                < ShieldCheck className="h-6 w-6 text-primary" />
              </div>
           </div>
 
