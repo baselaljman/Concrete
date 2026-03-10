@@ -47,7 +47,7 @@ export function Footer() {
               <MapPin className="h-5 w-5 text-accent shrink-0" />
             </div>
             <div className="flex items-center gap-3 text-sm text-primary-foreground/70 justify-end">
-              <span>+966 50 000 0000</span>
+              <span>0552076668</span>
               <Phone className="h-5 w-5 text-accent shrink-0" />
             </div>
             <div className="flex items-center gap-3 text-sm text-primary-foreground/70 justify-end">
