@@ -6,8 +6,9 @@ import { PRODUCTS, CATEGORIES } from '@/lib/data';
 import { ProductCard } from '@/components/ProductCard';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
-import { Search, Filter, X } from 'lucide-react';
+import { Search, Filter, X, Construction } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import Link from 'next/link';
 
 export default function Catalog() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -26,24 +27,24 @@ export default function Catalog() {
     <div className="container mx-auto px-4 py-12">
       <div className="flex flex-col md:flex-row gap-12">
         {/* Sidebar Filters */}
-        <aside className="w-full md:w-64 space-y-8 shrink-0">
+        <aside className="w-full md:w-64 space-y-8 shrink-0 text-right">
           <div>
-            <h3 className="font-headline font-bold text-xl mb-4 flex items-center gap-2">
-              <Filter className="h-5 w-5 text-accent" /> Categories
+            <h3 className="font-headline font-bold text-xl mb-4 flex items-center justify-end gap-2">
+              الفئات <Filter className="h-5 w-5 text-accent" />
             </h3>
             <div className="flex flex-col gap-2">
               <Button 
                 variant={selectedCategory === null ? 'default' : 'ghost'} 
-                className="justify-start"
+                className="justify-end"
                 onClick={() => setSelectedCategory(null)}
               >
-                All Products
+                جميع المنتجات
               </Button>
               {CATEGORIES.map(cat => (
                 <Button 
                   key={cat.id}
                   variant={selectedCategory === cat.id ? 'default' : 'ghost'} 
-                  className="justify-start capitalize"
+                  className="justify-end capitalize"
                   onClick={() => setSelectedCategory(cat.id)}
                 >
                   {cat.name}
@@ -53,10 +54,10 @@ export default function Catalog() {
           </div>
 
           <div className="bg-primary/5 p-6 rounded-xl border border-primary/10">
-            <h4 className="font-bold mb-2">Need a custom size?</h4>
-            <p className="text-sm text-muted-foreground mb-4">Our engineers can create custom concrete products based on your specs.</p>
+            <h4 className="font-bold mb-2">هل تحتاج لمقاس خاص؟</h4>
+            <p className="text-sm text-muted-foreground mb-4">يمكن لمهندسينا إنشاء منتجات خرسانية مخصصة بناءً على مواصفاتك.</p>
             <Button size="sm" className="w-full" asChild>
-              <Link href="/custom-request">Custom Tool</Link>
+              <Link href="/custom-request">أداة التخصيص</Link>
             </Button>
           </div>
         </aside>
@@ -64,26 +65,26 @@ export default function Catalog() {
         {/* Product Grid */}
         <div className="flex-1 space-y-8">
           <div className="flex flex-col sm:flex-row gap-4 justify-between items-center">
-            <div className="relative w-full max-w-md">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+            <p className="text-sm text-muted-foreground whitespace-nowrap order-2 sm:order-1">
+              عرض <span className="font-bold text-foreground">{filteredProducts.length}</span> منتج
+            </p>
+            <div className="relative w-full max-w-md order-1 sm:order-2">
+              <Search className="absolute right-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
               <Input 
-                placeholder="Search products..." 
-                className="pl-10 h-12 rounded-xl"
+                placeholder="ابحث عن المنتجات..." 
+                className="pr-10 h-12 rounded-xl text-right"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
               {searchTerm && (
                 <button 
                   onClick={() => setSearchTerm('')}
-                  className="absolute right-3 top-1/2 -translate-y-1/2"
+                  className="absolute left-3 top-1/2 -translate-y-1/2"
                 >
                   <X className="h-4 w-4 text-muted-foreground hover:text-foreground" />
                 </button>
               )}
             </div>
-            <p className="text-sm text-muted-foreground whitespace-nowrap">
-              Showing <span className="font-bold text-foreground">{filteredProducts.length}</span> products
-            </p>
           </div>
 
           {filteredProducts.length > 0 ? (
@@ -95,10 +96,10 @@ export default function Catalog() {
           ) : (
             <div className="py-20 text-center space-y-4 bg-muted/30 rounded-3xl">
               <Construction className="h-16 w-16 mx-auto text-muted-foreground opacity-50" />
-              <h3 className="text-2xl font-headline font-bold">No products found</h3>
-              <p className="text-muted-foreground">Try adjusting your search or filters.</p>
+              <h3 className="text-2xl font-headline font-bold">لم يتم العثور على منتجات</h3>
+              <p className="text-muted-foreground">حاول تعديل البحث أو الفلاتر.</p>
               <Button variant="outline" onClick={() => { setSearchTerm(''); setSelectedCategory(null); }}>
-                Clear All Filters
+                مسح جميع الفلاتر
               </Button>
             </div>
           )}
@@ -107,6 +108,3 @@ export default function Catalog() {
     </div>
   );
 }
-
-import { Construction } from 'lucide-react';
-import Link from 'next/link';

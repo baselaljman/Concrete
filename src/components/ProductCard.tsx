@@ -14,7 +14,7 @@ export function ProductCard({ product }: { product: Product }) {
   const { addToCart } = useCart();
 
   return (
-    <Card className="group overflow-hidden border-none shadow-md hover:shadow-xl transition-all duration-300">
+    <Card className="group overflow-hidden border-none shadow-md hover:shadow-xl transition-all duration-300 text-right">
       <Link href={`/products/${product.id}`} className="block relative aspect-video overflow-hidden">
         <Image
           src={product.imageUrl}
@@ -23,7 +23,7 @@ export function ProductCard({ product }: { product: Product }) {
           className="object-cover transition-transform duration-500 group-hover:scale-105"
         />
         <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors" />
-        <Badge className="absolute top-2 left-2 bg-primary/90 hover:bg-primary capitalize">
+        <Badge className="absolute top-2 right-2 bg-primary/90 hover:bg-primary capitalize">
           {product.category.replace('-', ' ')}
         </Badge>
       </Link>
@@ -34,12 +34,19 @@ export function ProductCard({ product }: { product: Product }) {
         <p className="text-sm text-muted-foreground mt-2 line-clamp-2">
           {product.description}
         </p>
-        <div className="mt-4 flex items-center justify-between">
-          <span className="text-xl font-bold text-primary">${product.price}</span>
+        <div className="mt-4 flex items-center justify-between flex-row-reverse">
+          <span className="text-xl font-bold text-primary">{product.price} ريال</span>
           <span className="text-xs text-muted-foreground">{product.dimensions}</span>
         </div>
       </CardContent>
       <CardFooter className="p-4 pt-0 flex gap-2">
+        <Button 
+          size="sm" 
+          className="flex-1 gap-2 bg-primary hover:bg-primary/90"
+          onClick={() => addToCart(product)}
+        >
+          <ShoppingCart className="h-4 w-4" /> شراء
+        </Button>
         <Button 
           variant="outline" 
           size="sm" 
@@ -47,15 +54,8 @@ export function ProductCard({ product }: { product: Product }) {
           asChild
         >
           <Link href={`/products/${product.id}`}>
-            <Eye className="h-4 w-4" /> View Details
+            <Eye className="h-4 w-4" /> التفاصيل
           </Link>
-        </Button>
-        <Button 
-          size="sm" 
-          className="flex-1 gap-2 bg-primary hover:bg-primary/90"
-          onClick={() => addToCart(product)}
-        >
-          <ShoppingCart className="h-4 w-4" /> Buy
         </Button>
       </CardFooter>
     </Card>

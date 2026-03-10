@@ -27,18 +27,18 @@ export function Navbar() {
               <Construction className="h-6 w-6 text-primary-foreground" />
             </div>
             <span className="font-headline font-bold text-xl tracking-tight text-primary">
-              Concreate Solutions
+              كونكريت سولوشنز
             </span>
           </Link>
           <div className="hidden md:flex items-center gap-6">
             <Link href="/catalog" className="text-sm font-medium hover:text-accent transition-colors">
-              Products
+              المنتجات
             </Link>
             <Link href="/custom-request" className="text-sm font-medium hover:text-accent transition-colors">
-              Custom Request
+              طلب خاص
             </Link>
             <Link href="/about" className="text-sm font-medium hover:text-accent transition-colors">
-              Why Us?
+              لماذا نحن؟
             </Link>
           </div>
         </div>
@@ -67,14 +67,14 @@ export function Navbar() {
                 <User className="h-5 w-5" />
               </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent align="end" className="w-48">
+            <DropdownMenuContent align="start" className="w-48">
               <DropdownMenuItem asChild>
-                <Link href="/profile">Profile</Link>
+                <Link href="/profile">الملف الشخصي</Link>
               </DropdownMenuItem>
               <DropdownMenuItem asChild>
-                <Link href="/profile/orders">My Orders</Link>
+                <Link href="/profile/orders">طلباتي</Link>
               </DropdownMenuItem>
-              <DropdownMenuItem className="text-destructive">Logout</DropdownMenuItem>
+              <DropdownMenuItem className="text-destructive text-right">تسجيل الخروج</DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
 
@@ -91,10 +91,10 @@ export function Navbar() {
       
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden border-t bg-background p-4 flex flex-col gap-4">
-          <Link href="/catalog" className="text-lg font-medium" onClick={() => setIsMobileMenuOpen(false)}>Products</Link>
-          <Link href="/custom-request" className="text-lg font-medium" onClick={() => setIsMobileMenuOpen(false)}>Custom Request</Link>
-          <Link href="/about" className="text-lg font-medium" onClick={() => setIsMobileMenuOpen(false)}>About</Link>
+        <div className="md:hidden border-t bg-background p-4 flex flex-col gap-4 text-right">
+          <Link href="/catalog" className="text-lg font-medium" onClick={() => setIsMobileMenuOpen(false)}>المنتجات</Link>
+          <Link href="/custom-request" className="text-lg font-medium" onClick={() => setIsMobileMenuOpen(false)}>طلب خاص</Link>
+          <Link href="/about" className="text-lg font-medium" onClick={() => setIsMobileMenuOpen(false)}>عن الشركة</Link>
         </div>
       )}
     </nav>

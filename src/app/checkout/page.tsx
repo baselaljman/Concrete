@@ -11,6 +11,7 @@ import { Calendar } from '@/components/ui/calendar';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { CalendarIcon, Truck, MapPin, CreditCard, CheckCircle } from 'lucide-react';
 import { format } from 'date-fns';
+import { ar } from 'date-fns/locale';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
 
@@ -21,7 +22,6 @@ export default function CheckoutPage() {
 
   const handleOrder = (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate order processing
     setIsOrdered(true);
     clearCart();
   };
@@ -32,20 +32,20 @@ export default function CheckoutPage() {
         <div className="h-24 w-24 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-8">
           <CheckCircle className="h-12 w-12" />
         </div>
-        <h1 className="text-4xl font-headline font-bold text-primary">Order Successful!</h1>
+        <h1 className="text-4xl font-headline font-bold text-primary">تم الطلب بنجاح!</h1>
         <p className="text-lg text-muted-foreground">
-          Your request has been received. Our logistics team will contact you shortly to confirm the delivery schedule to your site.
+          لقد استلمنا طلبك. سيتصل بك فريق الخدمات اللوجستية لدينا قريباً لتأكيد جدول التوصيل إلى موقعك.
         </p>
-        <div className="bg-muted p-6 rounded-2xl text-left">
-          <p className="text-sm font-bold mb-2">Order ID: CS-92834</p>
-          <p className="text-sm text-muted-foreground">Tracking updates will be sent to your email.</p>
+        <div className="bg-muted p-6 rounded-2xl text-right">
+          <p className="text-sm font-bold mb-2">رقم الطلب: CS-92834</p>
+          <p className="text-sm text-muted-foreground">سيتم إرسال تحديثات التتبع إلى بريدك الإلكتروني.</p>
         </div>
         <div className="flex gap-4">
           <Button variant="outline" className="flex-1" asChild>
-            <Link href="/profile/orders">View Order</Link>
+            <Link href="/profile/orders">عرض الطلب</Link>
           </Button>
           <Button className="flex-1 bg-primary" asChild>
-            <Link href="/">Back to Home</Link>
+            <Link href="/">العودة للرئيسية</Link>
           </Button>
         </div>
       </div>
@@ -53,58 +53,114 @@ export default function CheckoutPage() {
   }
 
   return (
-    <div className="container mx-auto px-4 py-12 max-w-6xl">
-      <h1 className="text-3xl font-headline font-bold mb-8">Checkout</h1>
+    <div className="container mx-auto px-4 py-12 max-w-6xl text-right">
+      <h1 className="text-3xl font-headline font-bold mb-8">الدفع وإتمام الطلب</h1>
       
       <form onSubmit={handleOrder} className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-        <div className="space-y-8">
+        <div className="space-y-8 order-2 lg:order-1">
+           <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center justify-end gap-2">تفاصيل الدفع <CreditCard className="h-5 w-5 text-accent"/></CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+               <div className="bg-primary/5 p-4 rounded-lg border border-primary/10 mb-4">
+                  <p className="text-sm font-bold text-primary text-right">فوترة المشروع: حساب الشركة</p>
+                  <p className="text-xs text-muted-foreground text-right">سيتم إضافة هذا الطلب إلى كشف حسابك الشهري.</p>
+               </div>
+               <div className="space-y-2">
+                  <Label htmlFor="cardName">اسم صاحب البطاقة</Label>
+                  <Input id="cardName" placeholder="الاسم كما يظهر على البطاقة" className="text-right" />
+               </div>
+               <div className="space-y-2">
+                  <Label htmlFor="cardNumber">رقم البطاقة</Label>
+                  <Input id="cardNumber" placeholder="0000 0000 0000 0000" className="text-right" />
+               </div>
+               <div className="grid grid-cols-2 gap-4">
+                  <div className="space-y-2">
+                    <Label htmlFor="cvv">رمز التحقق (CVV)</Label>
+                    <Input id="cvv" placeholder="123" className="text-right" />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="expiry">تاريخ الانتهاء</Label>
+                    <Input id="expiry" placeholder="MM/YY" className="text-right" />
+                  </div>
+               </div>
+            </CardContent>
+          </Card>
+
+          <div className="bg-muted p-8 rounded-3xl space-y-6">
+            <h3 className="text-xl font-headline font-bold">مراجعة الطلب</h3>
+            <div className="space-y-2 text-sm">
+              <div className="flex justify-between flex-row-reverse">
+                <span>المجموع الفرعي للمنتجات</span>
+                <span>{totalPrice.toFixed(2)} ريال</span>
+              </div>
+              <div className="flex justify-between flex-row-reverse">
+                <span>التوصيل والمناولة للموقع</span>
+                <span className="text-green-600 font-bold">مجاني (عرض الكميات)</span>
+              </div>
+              <div className="pt-4 border-t flex justify-between flex-row-reverse text-2xl font-bold text-primary">
+                <span>الإجمالي المستحق</span>
+                <span>{totalPrice.toFixed(2)} ريال</span>
+              </div>
+            </div>
+            <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-white h-16 text-lg font-bold">
+              إرسال طلب الموقع
+            </Button>
+            <p className="text-[10px] text-center text-muted-foreground">
+              بوضع الطلب، فإنك توافق على شروط خدمة كونكريت سولوشنز وظروف التوصيل.
+            </p>
+          </div>
+        </div>
+
+        <div className="space-y-8 order-1 lg:order-2">
           <Card>
             <CardHeader>
-              <CardTitle className="flex items-center gap-2"><MapPin className="h-5 w-5 text-accent"/> Site Information</CardTitle>
+              <CardTitle className="flex items-center justify-end gap-2">معلومات الموقع <MapPin className="h-5 w-5 text-accent"/></CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <Label htmlFor="firstName">Project Contact Person</Label>
-                  <Input id="firstName" placeholder="Full Name" required />
+                  <Label htmlFor="phone">رقم الجوال</Label>
+                  <Input id="phone" placeholder="+966 5..." required className="text-right" />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="phone">Phone Number</Label>
-                  <Input id="phone" placeholder="+966 5..." required />
+                  <Label htmlFor="firstName">شخص التواصل في المشروع</Label>
+                  <Input id="firstName" placeholder="الاسم الكامل" required className="text-right" />
                 </div>
               </div>
               <div className="space-y-2">
-                <Label htmlFor="address">Site Delivery Address</Label>
-                <Input id="address" placeholder="Main Street, Building No, Area" required />
+                <Label htmlFor="address">عنوان التوصيل للموقع</Label>
+                <Input id="address" placeholder="الشارع الرئيسي، رقم المبنى، الحي" required className="text-right" />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="notes">Special Offloading Instructions</Label>
-                <Input id="notes" placeholder="e.g. Needs crane access, restrictive gate height" />
+                <Label htmlFor="notes">تعليمات تفريغ خاصة</Label>
+                <Input id="notes" placeholder="مثال: يحتاج وصول رافعة، ارتفاع بوابة محدود" className="text-right" />
               </div>
             </CardContent>
           </Card>
 
           <Card>
             <CardHeader>
-              <CardTitle className="flex items-center gap-2"><Truck className="h-5 w-5 text-accent"/> Delivery Scheduling</CardTitle>
+              <CardTitle className="flex items-center justify-end gap-2">جدولة التوصيل <Truck className="h-5 w-5 text-accent"/></CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="flex flex-col space-y-2">
-                <Label>Preferred Delivery Date</Label>
+                <Label>تاريخ التوصيل المفضل</Label>
                 <Popover>
                   <PopoverTrigger asChild>
                     <Button
                       variant={"outline"}
                       className={cn(
-                        "w-full justify-start text-left font-normal h-12",
+                        "w-full justify-end text-right font-normal h-12",
                         !date && "text-muted-foreground"
                       )}
                     >
-                      <CalendarIcon className="mr-2 h-4 w-4" />
-                      {date ? format(date, "PPP") : <span>Pick a date</span>}
+                      {date ? format(date, "PPP", { locale: ar }) : <span>اختر تاريخاً</span>}
+                      <CalendarIcon className="ml-2 h-4 w-4" />
                     </Button>
                   </PopoverTrigger>
-                  <PopoverContent className="w-auto p-0">
+                  <PopoverContent className="w-auto p-0" align="end">
                     <Calendar
                       mode="single"
                       selected={date}
@@ -116,73 +172,17 @@ export default function CheckoutPage() {
                 </Popover>
               </div>
               <div className="grid grid-cols-2 gap-4">
-                 <Button type="button" variant="outline" className="h-16 text-xs flex flex-col items-center justify-center border-accent bg-accent/5">
-                    <span className="font-bold">Morning Slot</span>
-                    <span className="opacity-70">8:00 AM - 12:00 PM</span>
-                 </Button>
                  <Button type="button" variant="outline" className="h-16 text-xs flex flex-col items-center justify-center">
-                    <span className="font-bold">Afternoon Slot</span>
-                    <span className="opacity-70">1:00 PM - 5:00 PM</span>
+                    <span className="font-bold">فترة بعد الظهر</span>
+                    <span className="opacity-70">1:00 م - 5:00 م</span>
+                 </Button>
+                 <Button type="button" variant="outline" className="h-16 text-xs flex flex-col items-center justify-center border-accent bg-accent/5">
+                    <span className="font-bold">فترة صباحية</span>
+                    <span className="opacity-70">8:00 ص - 12:00 م</span>
                  </Button>
               </div>
             </CardContent>
           </Card>
-        </div>
-
-        <div className="space-y-8">
-           <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2"><CreditCard className="h-5 w-5 text-accent"/> Payment Details</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4">
-               <div className="bg-primary/5 p-4 rounded-lg border border-primary/10 mb-4">
-                  <p className="text-sm font-bold text-primary">Project Billing: Corporate Account</p>
-                  <p className="text-xs text-muted-foreground">This order will be added to your monthly statement.</p>
-               </div>
-               <div className="space-y-2">
-                  <Label htmlFor="cardName">Cardholder Name</Label>
-                  <Input id="cardName" placeholder="NAME ON CARD" />
-               </div>
-               <div className="space-y-2">
-                  <Label htmlFor="cardNumber">Card Number</Label>
-                  <Input id="cardNumber" placeholder="0000 0000 0000 0000" />
-               </div>
-               <div className="grid grid-cols-2 gap-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="expiry">Expiry Date</Label>
-                    <Input id="expiry" placeholder="MM/YY" />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="cvv">CVV</Label>
-                    <Input id="cvv" placeholder="123" />
-                  </div>
-               </div>
-            </CardContent>
-          </Card>
-
-          <div className="bg-muted p-8 rounded-3xl space-y-6">
-            <h3 className="text-xl font-headline font-bold">Review Order</h3>
-            <div className="space-y-2 text-sm">
-              <div className="flex justify-between">
-                <span>Items Subtotal</span>
-                <span>${totalPrice.toFixed(2)}</span>
-              </div>
-              <div className="flex justify-between">
-                <span>Site Delivery & Handling</span>
-                <span className="text-green-600 font-bold">FREE (Bulk Promotion)</span>
-              </div>
-              <div className="pt-4 border-t flex justify-between text-2xl font-bold text-primary">
-                <span>Total Due</span>
-                <span>${totalPrice.toFixed(2)}</span>
-              </div>
-            </div>
-            <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-white h-16 text-lg font-bold">
-              Place Site Order
-            </Button>
-            <p className="text-[10px] text-center text-muted-foreground">
-              By placing the order, you agree to Concreate Solutions' terms of service and delivery conditions.
-            </p>
-          </div>
         </div>
       </form>
     </div>

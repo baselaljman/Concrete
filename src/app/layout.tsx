@@ -8,8 +8,8 @@ import { CartProvider } from '@/components/CartProvider';
 import { AIChatbot } from '@/components/AIChatbot';
 
 export const metadata: Metadata = {
-  title: 'Concreate Solutions | Premium Concrete Products',
-  description: 'Integrated concrete solutions for your projects with high efficiency and quality.',
+  title: 'كونكريت سولوشنز | حلول خرسانية متميزة',
+  description: 'حلول خرسانية متكاملة لمشاريعكم بكفاءة وجودة عالية.',
 };
 
 export default function RootLayout({
@@ -18,11 +18,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="ar" dir="rtl">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=Noto+Kufi+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet" />
       </head>
       <body className="font-body antialiased min-h-screen flex flex-col bg-background text-foreground">
         <CartProvider>

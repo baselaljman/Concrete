@@ -1,3 +1,4 @@
+
 import { Product } from './types';
 import { PlaceHolderImages } from '@/app/lib/placeholder-images';
 
@@ -6,76 +7,76 @@ const getImg = (id: string) => PlaceHolderImages.find(img => img.id === id)?.ima
 export const PRODUCTS: Product[] = [
   {
     id: 'lb-1',
-    name: 'Standard Lighting Base LB-500',
+    name: 'قاعدة إنارة قياسية LB-500',
     category: 'lighting',
-    description: 'High-strength concrete base designed for urban street lighting poles. Provides excellent stability and vibration resistance.',
+    description: 'قاعدة خرسانية عالية القوة مصممة لأعمدة إنارة الشوارع الحضرية. توفر ثباتاً ممتازاً ومقاومة للاهتزاز.',
     price: 450,
-    specifications: ['Concrete Class: C35/45', 'Reinforcement: High-tensile steel', 'Finish: Smooth natural concrete'],
+    specifications: ['فئة الخرسانة: C35/45', 'التسليح: فولاذ عالي الشد', 'التشطيب: خرسانة طبيعية ناعمة'],
     imageUrl: getImg('lighting-base'),
-    dimensions: '500x500x1200mm',
-    material: 'Reinforced Concrete'
+    dimensions: '500x500x1200 مم',
+    material: 'خرسانة مسلحة'
   },
   {
     id: 'mh-1',
-    name: 'Sewage Manhole Ring SM-1000',
+    name: 'حلقة منهل صرف صحي SM-1000',
     category: 'manholes',
-    description: 'Modular sewage manhole section with tongue and groove joints for easy installation and leak-proof performance.',
+    description: 'قسم منهل صرف صحي معياري مع وصلات لسان وأخدود لسهولة التركيب وأداء مانع للتسرب.',
     price: 320,
-    specifications: ['Water absorption: <5%', 'Load Class: D400', 'Internal coating: Optional epoxy'],
+    specifications: ['امتصاص الماء: <5%', 'فئة التحميل: D400', 'طلاء داخلي: إيبوكسي اختياري'],
     imageUrl: getImg('manhole'),
-    dimensions: '1000mm Internal Diameter',
-    material: 'Heavy Duty Concrete'
+    dimensions: 'قطر داخلي 1000 مم',
+    material: 'خرسانة شديدة التحمل'
   },
   {
     id: 'br-1',
-    name: 'Jersey Barrier Type A',
+    name: 'حاجز جيرسي نوع A',
     category: 'barriers',
-    description: 'Standard highway barrier used to separate traffic lanes and protect work zones. Complies with safety regulations.',
+    description: 'حاجز طريق قياسي يستخدم لفصل حارات المرور وحماية مناطق العمل. متوافق مع أنظمة السلامة.',
     price: 680,
-    specifications: ['Impact resistance: High', 'Interlocking design', 'Precast for quick deployment'],
+    specifications: ['مقاومة الصدمات: عالية', 'تصميم متداخل', 'مسبق الصب للنشر السريع'],
     imageUrl: getImg('barrier'),
-    dimensions: '3000x600x810mm',
-    material: 'C40/50 Concrete'
+    dimensions: '3000x600x810 مم',
+    material: 'خرسانة C40/50'
   },
   {
     id: 'bn-1',
-    name: 'Urban Comfort Bench',
+    name: 'مقعد الراحة الحضري',
     category: 'benches',
-    description: 'Minimalist concrete bench perfect for modern public parks and city centers. Durable and weather-resistant.',
+    description: 'مقعد خرساني بسيط مثالي للحدائق العامة الحديثة ومراكز المدن. متين ومقاوم للعوامل الجوية.',
     price: 1200,
-    specifications: ['Ergonomic design', 'Anti-graffiti coating', 'No maintenance required'],
+    specifications: ['تصميم مريح', 'طلاء مضاد للكتابة', 'لا يتطلب صيانة'],
     imageUrl: getImg('bench'),
-    dimensions: '1800x450x450mm',
-    material: 'Polished Architectural Concrete'
+    dimensions: '1800x450x450 مم',
+    material: 'خرسانة معمارية مصقولة'
   },
   {
     id: 'cs-1',
-    name: 'Heavy Duty Car Stopper',
+    name: 'مصد سيارات شديد التحمل',
     category: 'car-stoppers',
-    description: 'Reinforced concrete wheel stopper for commercial parking lots. Prevents damage to buildings and vehicles.',
+    description: 'مصد عجلات خرساني مسلح لمواقف السيارات التجارية. يمنع تلف المباني والمركبات.',
     price: 85,
-    specifications: ['High visibility markers', 'Anchor holes included', 'Sulphate resistant'],
+    specifications: ['علامات رؤية عالية', 'ثقوب تثبيت متضمنة', 'مقاوم للكبريتات'],
     imageUrl: getImg('car-stopper'),
-    dimensions: '1500x150x120mm',
-    material: 'Fibre Reinforced Concrete'
+    dimensions: '1500x150x120 مم',
+    material: 'خرسانة معززة بالألياف'
   },
   {
     id: 'lb-2',
-    name: 'Decorative Base Pro',
+    name: 'قاعدة ديكورية برو',
     category: 'lighting',
-    description: 'Aesthetically pleasing concrete base for garden and pedestrian area lighting.',
+    description: 'قاعدة خرسانية جمالية لإنارة الحدائق ومناطق المشاة.',
     price: 550,
-    specifications: ['Aesthetic finish', 'Integrated cable entry', 'Custom colors available'],
+    specifications: ['تشطيب جمالي', 'مدخل كابل متكامل', 'ألوان مخصصة متاحة'],
     imageUrl: getImg('lighting-base'),
-    dimensions: '400x400x1000mm',
-    material: 'Architectural Concrete'
+    dimensions: '400x400x1000 مم',
+    material: 'خرسانة معمارية'
   }
 ];
 
 export const CATEGORIES = [
-  { id: 'lighting', name: 'Lighting Bases', icon: 'Zap' },
-  { id: 'manholes', name: 'Manholes & Rings', icon: 'Construction' },
-  { id: 'barriers', name: 'Road Barriers', icon: 'Shield' },
-  { id: 'benches', name: 'Park Benches', icon: 'Armchair' },
-  { id: 'car-stoppers', name: 'Car Stoppers', icon: 'Square' }
+  { id: 'lighting', name: 'قواعد الإنارة', icon: 'Zap' },
+  { id: 'manholes', name: 'المناهل والحلقات', icon: 'Construction' },
+  { id: 'barriers', name: 'حواجز الطرق', icon: 'Shield' },
+  { id: 'benches', name: 'مقاعد الحدائق', icon: 'Armchair' },
+  { id: 'car-stoppers', name: 'مصدات السيارات', icon: 'Square' }
 ];
