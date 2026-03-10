@@ -1,10 +1,8 @@
-
 import type {Metadata} from 'next';
 import './globals.css';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { Toaster } from '@/components/ui/toaster';
-import { AIChatbot } from '@/components/AIChatbot';
 
 export const metadata: Metadata = {
   title: 'كونكريت سولوشنز | حلول خرسانية متميزة',
@@ -29,7 +27,6 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
-        <AIChatbot />
         <Toaster />
       </body>
     </html>
