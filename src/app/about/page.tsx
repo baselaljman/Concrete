@@ -49,7 +49,7 @@ export default function AboutPage() {
       <section className="bg-primary py-20 text-white relative overflow-hidden">
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl ml-auto">
-            <h1 className="text-4xl md:text-6xl font-headline font-bold mb-6">لماذا كونكريت؟</h1>
+            <h1 className="text-4xl md:text-6xl font-headline font-bold mb-6">لماذا نحن؟</h1>
             <p className="text-lg md:text-xl opacity-80 leading-relaxed">
               نحن في كونكريت نؤمن بأن القوة تبدأ من الأساس. نقدم حلولاً خرسانية مسبقة الصب تجمع بين المتانة الهندسية والجمال المعماري، لنساهم في بناء مستقبل المملكة.
             </p>
