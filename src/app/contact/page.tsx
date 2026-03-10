@@ -91,7 +91,7 @@ export default function ContactPage() {
               <Clock className="h-7 w-7" />
             </div>
             <h4 className="font-bold text-lg">ساعات العمل</h4>
-            <p className="text-sm text-muted-foreground leading-relaxed">السبت - الخميس<br />8:00 صباحاً - 5:00 مساءً</p>
+            <p className="text-sm text-muted-foreground leading-relaxed">نحن في خدمتكم<br />على مدار 24 ساعة</p>
           </div>
           <div className="flex flex-col items-center p-8 bg-card border rounded-2xl text-center space-y-4 shadow-sm">
             <div className="h-14 w-14 bg-accent/10 rounded-full flex items-center justify-center text-accent">
