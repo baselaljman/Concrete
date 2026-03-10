@@ -51,7 +51,7 @@ export function Footer() {
               <Phone className="h-5 w-5 text-accent shrink-0" />
             </div>
             <div className="flex items-center gap-3 text-sm text-primary-foreground/70 justify-end">
-              <span>info@concreate.com</span>
+              <span>he1991mo@gmail.com</span>
               <Mail className="h-5 w-5 text-accent shrink-0" />
             </div>
           </div>
