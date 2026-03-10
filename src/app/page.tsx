@@ -55,13 +55,21 @@ export default function Home() {
             <Link 
               key={cat.id} 
               href={`/catalog?category=${cat.id}`}
-              className="group bg-card border p-6 rounded-xl text-center hover:border-accent hover:shadow-lg transition-all"
+              className="group bg-card border p-4 rounded-xl text-center hover:border-accent hover:shadow-lg transition-all flex flex-col items-center gap-4"
             >
-              <div className="w-16 h-16 bg-secondary rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-accent transition-colors">
-                <Zap className="h-8 w-8 text-primary group-hover:text-white" />
+              <div className="relative w-full aspect-square rounded-lg overflow-hidden border border-muted">
+                <Image 
+                  src={cat.imageUrl} 
+                  alt={cat.name} 
+                  fill 
+                  className="object-cover transition-transform group-hover:scale-110" 
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 20vw, 20vw"
+                />
               </div>
-              <h3 className="font-headline font-bold text-lg">{cat.name}</h3>
-              <p className="text-xs text-muted-foreground mt-2">عرض المجموعة <ArrowLeft className="inline h-3 w-3" /></p>
+              <div>
+                <h3 className="font-headline font-bold text-lg">{cat.name}</h3>
+                <p className="text-xs text-muted-foreground mt-2 group-hover:text-accent transition-colors">عرض المجموعة <ArrowLeft className="inline h-3 w-3" /></p>
+              </div>
             </Link>
           ))}
         </div>
@@ -109,6 +117,7 @@ export default function Home() {
                 alt="Quality production" 
                 fill 
                 className="object-cover"
+                data-ai-hint="concrete factory"
               />
             </div>
           </div>

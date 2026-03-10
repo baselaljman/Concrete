@@ -74,9 +74,9 @@ export const PRODUCTS: Product[] = [
 ];
 
 export const CATEGORIES = [
-  { id: 'lighting', name: 'قواعد الإنارة', icon: 'Zap' },
-  { id: 'manholes', name: 'المناهل والحلقات', icon: 'Construction' },
-  { id: 'barriers', name: 'حواجز الطرق', icon: 'Shield' },
-  { id: 'benches', name: 'مقاعد الحدائق', icon: 'Armchair' },
-  { id: 'car-stoppers', name: 'مصدات السيارات', icon: 'Square' }
+  { id: 'lighting', name: 'قواعد الإنارة', imageUrl: getImg('lighting-base') },
+  { id: 'manholes', name: 'المناهل والحلقات', imageUrl: getImg('manhole') },
+  { id: 'barriers', name: 'حواجز الطرق', imageUrl: getImg('barrier') },
+  { id: 'benches', name: 'مقاعد الحدائق', imageUrl: getImg('bench') },
+  { id: 'car-stoppers', name: 'مصدات السيارات', imageUrl: getImg('car-stopper') }
 ];
