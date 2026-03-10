@@ -3,6 +3,7 @@ import './globals.css';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { Toaster } from '@/components/ui/toaster';
+import { FloatingActions } from '@/components/FloatingActions';
 
 export const metadata: Metadata = {
   title: 'كونكريت | حلول خرسانية متميزة',
@@ -27,6 +28,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <FloatingActions />
         <Toaster />
       </body>
     </html>
