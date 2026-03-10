@@ -1,4 +1,3 @@
-
 'use client';
 
 import Link from 'next/link';
@@ -55,13 +54,13 @@ export function Navbar() {
 
         <div className="flex items-center gap-2">
           <Button 
-            variant="ghost" 
+            variant="outline" 
             size="sm" 
             onClick={toggleLanguage}
-            className="flex items-center gap-2 font-bold text-primary"
+            className="flex items-center gap-2 font-bold text-primary border-primary/20 hover:bg-primary/5 hover:border-primary transition-all px-4"
           >
-            <Languages className="h-5 w-5" />
-            <span className="hidden sm:inline">{t('lang_switch')}</span>
+            <Languages className="h-5 w-5 text-accent" />
+            <span className="text-sm">{t('nav_change_lang')}</span>
           </Button>
 
           <Link href="/catalog">
@@ -95,10 +94,10 @@ export function Navbar() {
                 ))}
                 <button 
                   onClick={() => { toggleLanguage(); setIsOpen(false); }}
-                  className="text-lg font-medium py-2 flex items-center gap-2"
+                  className="text-lg font-medium py-2 flex items-center gap-2 border-t mt-4 pt-4"
                   style={{ justifyContent: dir === 'rtl' ? 'flex-end' : 'flex-start' }}
                 >
-                   {t('lang_switch')} <Languages className="h-5 w-5" />
+                   {t('nav_change_lang')} <Languages className="h-5 w-5 text-accent" />
                 </button>
               </div>
             </SheetContent>

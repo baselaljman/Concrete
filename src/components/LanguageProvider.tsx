@@ -1,4 +1,3 @@
-
 'use client';
 
 import React, { createContext, useContext, useState, useEffect } from 'react';
@@ -18,6 +17,7 @@ const translations: Record<Language, Record<string, string>> = {
     nav_products: 'المنتجات',
     nav_about: 'لماذا نحن؟',
     nav_contact: 'اتصل بنا',
+    nav_change_lang: 'تغيير اللغة',
     hero_title: 'نبني القوة،',
     hero_subtitle: 'نشكل التقدم',
     hero_desc: 'حلول خرسانية متميزة للإنارة، سلامة الطرق، والتطوير الحضري. صُممت لتدوم، وسُلمت بدقة.',
@@ -36,6 +36,7 @@ const translations: Record<Language, Record<string, string>> = {
     nav_products: 'Products',
     nav_about: 'Why Us?',
     nav_contact: 'Contact Us',
+    nav_change_lang: 'Change Language',
     hero_title: 'Building Strength,',
     hero_subtitle: 'Shaping Progress',
     hero_desc: 'Premium concrete solutions for lighting, road safety, and urban development. Built to last, delivered with precision.',
