@@ -60,7 +60,7 @@ export function Navbar() {
             className="flex items-center gap-2 font-bold text-primary border-primary/20 hover:bg-primary/5 hover:border-primary transition-all px-4"
           >
             <Languages className="h-5 w-5 text-accent" />
-            <span className="text-sm">{t('nav_change_lang')}</span>
+            <span className="text-sm">{t('lang_switch')}</span>
           </Button>
 
           <Link href="/catalog">
@@ -97,7 +97,7 @@ export function Navbar() {
                   className="text-lg font-medium py-2 flex items-center gap-2 border-t mt-4 pt-4"
                   style={{ justifyContent: dir === 'rtl' ? 'flex-end' : 'flex-start' }}
                 >
-                   {t('nav_change_lang')} <Languages className="h-5 w-5 text-accent" />
+                   {t('lang_switch')} <Languages className="h-5 w-5 text-accent" />
                 </button>
               </div>
             </SheetContent>
