@@ -1,4 +1,3 @@
-
 'use client';
 
 import React, { useState, useRef, useEffect } from 'react';
@@ -14,7 +13,7 @@ export function AIChatbot() {
   const [query, setQuery] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [messages, setMessages] = useState<{ role: 'user' | 'ai'; content: string }[]>([
-    { role: 'ai', content: 'مرحباً بكم في كونكريت سولوشنز! كيف يمكنني مساعدتكم اليوم فيما يخص منتجاتنا وخدماتنا الخرسانية؟' }
+    { role: 'ai', content: 'مرحباً بكم في كونكريت! كيف يمكنني مساعدتكم اليوم فيما يخص منتجاتنا وخدماتنا الخرسانية؟' }
   ]);
   const scrollRef = useRef<HTMLDivElement>(null);
 
@@ -47,29 +46,29 @@ export function AIChatbot() {
       {!isOpen ? (
         <Button 
           onClick={() => setIsOpen(true)}
-          className="h-14 w-14 rounded-full shadow-2xl bg-accent hover:bg-accent/90 animate-bounce"
+          className="h-12 w-12 md:h-14 md:w-14 rounded-full shadow-2xl bg-accent hover:bg-accent/90 animate-bounce"
         >
-          <MessageSquare className="h-6 w-6" />
+          <MessageSquare className="h-5 w-5 md:h-6 md:w-6" />
         </Button>
       ) : (
-        <div className="bg-card border rounded-xl shadow-2xl w-[350px] sm:w-[400px] flex flex-col h-[500px] overflow-hidden animate-in slide-in-from-bottom-5 text-right">
-          <div className="bg-primary p-4 flex items-center justify-between text-primary-foreground">
+        <div className="bg-card border rounded-xl shadow-2xl w-[85vw] sm:w-[350px] md:w-[400px] flex flex-col h-[70vh] md:h-[500px] overflow-hidden animate-in slide-in-from-bottom-5 text-right">
+          <div className="bg-primary p-3 md:p-4 flex items-center justify-between text-primary-foreground">
             <Button variant="ghost" size="icon" className="h-8 w-8 text-primary-foreground hover:bg-primary-foreground/10" onClick={() => setIsOpen(false)}>
               <X className="h-5 w-5" />
             </Button>
             <div className="flex items-center gap-2">
-              <span className="font-headline font-bold">دعم كونكريت الذكي</span>
-              <MessageSquare className="h-5 w-5 text-accent" />
+              <span className="font-headline font-bold text-sm md:text-base">دعم كونكريت الذكي</span>
+              <MessageSquare className="h-4 w-4 md:h-5 md:w-5 text-accent" />
             </div>
           </div>
 
-          <ScrollArea className="flex-1 p-4" ref={scrollRef}>
-            <div className="flex flex-col gap-4">
+          <ScrollArea className="flex-1 p-3 md:p-4" ref={scrollRef}>
+            <div className="flex flex-col gap-3 md:gap-4">
               {messages.map((msg, i) => (
                 <div 
                   key={i} 
                   className={cn(
-                    "max-w-[80%] rounded-lg p-3 text-sm",
+                    "max-w-[85%] rounded-lg p-2.5 md:p-3 text-xs md:text-sm",
                     msg.role === 'user' 
                       ? "mr-auto bg-accent text-accent-foreground ml-0" 
                       : "ml-auto bg-muted text-muted-foreground mr-0"
@@ -79,24 +78,24 @@ export function AIChatbot() {
                 </div>
               ))}
               {isLoading && (
-                <div className="ml-auto bg-muted rounded-lg p-3 flex items-center gap-2">
-                  <span className="text-xs">جاري التفكير...</span>
-                  <Loader2 className="h-4 w-4 animate-spin text-accent" />
+                <div className="ml-auto bg-muted rounded-lg p-2.5 md:p-3 flex items-center gap-2">
+                  <span className="text-[10px] md:text-xs">جاري التفكير...</span>
+                  <Loader2 className="h-3 w-3 md:h-4 md:w-4 animate-spin text-accent" />
                 </div>
               )}
             </div>
           </ScrollArea>
 
-          <div className="p-4 border-t flex gap-2">
-            <Button size="icon" onClick={handleSend} disabled={isLoading || !query.trim()}>
+          <div className="p-3 md:p-4 border-t flex gap-2">
+            <Button size="icon" className="h-9 w-9 md:h-10 md:w-10" onClick={handleSend} disabled={isLoading || !query.trim()}>
               <Send className="h-4 w-4 rotate-180" />
             </Button>
             <Input 
-              placeholder="اسأل عن المنتجات، التوصيل..." 
+              placeholder="اسأل عن المنتجات..." 
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               onKeyDown={(e) => e.key === 'Enter' && handleSend()}
-              className="flex-1 text-right"
+              className="flex-1 text-right h-9 md:h-10 text-sm"
             />
           </div>
         </div>
