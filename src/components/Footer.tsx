@@ -26,7 +26,6 @@ export function Footer() {
             <h3 className="font-headline font-bold text-lg mb-4">روابط سريعة</h3>
             <ul className="space-y-2 text-sm text-primary-foreground/70">
               <li><Link href="/catalog" className="hover:text-accent transition-colors">كتالوج المنتجات</Link></li>
-              <li><Link href="/custom-request" className="hover:text-accent transition-colors">المواصفات الخاصة</Link></li>
               <li><Link href="/about" className="hover:text-accent transition-colors">ملف الشركة</Link></li>
               <li><Link href="/contact" className="hover:text-accent transition-colors">دعم العملاء</Link></li>
             </ul>

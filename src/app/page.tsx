@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button';
 import { PRODUCTS, CATEGORIES } from '@/lib/data';
 import { ProductCard } from '@/components/ProductCard';
 import { PlaceHolderImages } from '@/app/lib/placeholder-images';
-import { CheckCircle, Truck, Zap, Shield, ArrowLeft, Construction } from 'lucide-react';
+import { Truck, Zap, Shield, ArrowLeft, Construction, Mail } from 'lucide-react';
 
 export default function Home() {
   const heroImg = PlaceHolderImages.find(img => img.id === 'hero-bg')?.imageUrl || '';
@@ -37,7 +37,7 @@ export default function Home() {
                 <Link href="/catalog">استكشف الكتالوج</Link>
               </Button>
               <Button size="lg" variant="outline" className="text-white border-white hover:bg-white/10 h-14 text-lg" asChild>
-                <Link href="/custom-request">طلب خاص</Link>
+                <Link href="/contact">تواصل معنا</Link>
               </Button>
             </div>
           </div>
@@ -88,7 +88,7 @@ export default function Home() {
                   </div>
                   <div>
                     <h4 className="font-bold text-xl mb-1">تنوع هائل</h4>
-                    <p className="text-primary-foreground/70">من قواعد الإنارة إلى مقاعد الحدائق، نقدم جميع الأحجام والأنواع المصممة حسب الطلب.</p>
+                    <p className="text-primary-foreground/70">من قواعد الإنارة إلى مقاعد الحدائق، نقدم جميع الأحجام والأنواع المصممة حسب المعايير الهندسية.</p>
                   </div>
                 </div>
                 <div className="flex gap-4">
@@ -105,8 +105,8 @@ export default function Home() {
                     <Truck className="h-6 w-6 text-white" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-xl mb-1">سهولة الطلب</h4>
-                    <p className="text-primary-foreground/70">واجهة طلب سهلة عبر الإنترنت مع توصيل سريع وآمن مباشرة إلى موقعك.</p>
+                    <h4 className="font-bold text-xl mb-1">سهولة الطلب والتوصيل</h4>
+                    <p className="text-primary-foreground/70">تواصل مباشر وسريع مع قسم المبيعات وتوصيل آمن للموقع مباشرة.</p>
                   </div>
                 </div>
               </div>
@@ -146,20 +146,20 @@ export default function Home() {
 
       {/* CTA Section */}
       <section className="container mx-auto px-4">
-        <div className="bg-accent rounded-3xl p-8 md:p-16 flex flex-col md:flex-row items-center justify-between gap-8 text-white relative overflow-hidden">
+        <div className="bg-accent rounded-3xl p-8 md:p-16 flex flex-col md:flex-row items-center justify-between gap-8 text-white relative overflow-hidden text-right">
           <div className="absolute top-0 left-0 opacity-10 -translate-x-1/4 -translate-y-1/4">
              <Construction className="h-[400px] w-[400px]" />
           </div>
-          <div className="relative z-10 space-y-4 max-w-xl text-right">
-            <h2 className="text-3xl md:text-4xl font-headline font-bold">هل لديك متطلبات خاصة؟</h2>
-            <p className="text-lg opacity-90">تساعدك أداتنا المخصصة والمدعومة بالذكاء الاصطناعي في تحديد المواصفات الدقيقة والتحقق من الجدوى في ثوانٍ.</p>
+          <div className="relative z-10 space-y-4 max-w-xl">
+            <h2 className="text-3xl md:text-4xl font-headline font-bold">هل تحتاج إلى استشارة لمشروعك؟</h2>
+            <p className="text-lg opacity-90">فريقنا الهندسي جاهز لمساعدتك في اختيار المنتجات الأنسب لمواصفات مشروعك الفنية.</p>
           </div>
           <div className="relative z-10 flex flex-col sm:flex-row gap-4">
-            <Button size="lg" variant="secondary" className="px-8 h-14 font-bold text-primary" asChild>
-              <Link href="/custom-request">جرب أداة التخصيص</Link>
-            </Button>
             <Button size="lg" className="bg-primary text-white border-none px-8 h-14 font-bold" asChild>
               <Link href="/contact">اتصل بالمبيعات</Link>
+            </Button>
+            <Button size="lg" variant="secondary" className="px-8 h-14 font-bold text-primary" asChild>
+              <Link href="/about">اعرف المزيد عنا</Link>
             </Button>
           </div>
         </div>

@@ -54,10 +54,10 @@ export default function Catalog() {
           </div>
 
           <div className="bg-primary/5 p-6 rounded-xl border border-primary/10">
-            <h4 className="font-bold mb-2">هل تحتاج لمقاس خاص؟</h4>
-            <p className="text-sm text-muted-foreground mb-4">يمكن لمهندسينا إنشاء منتجات خرسانية مخصصة بناءً على مواصفاتك.</p>
+            <h4 className="font-bold mb-2">طلب أسعار خاصة</h4>
+            <p className="text-sm text-muted-foreground mb-4">للمشاريع الكبرى والكميات الضخمة، يرجى التواصل مع قسم المبيعات مباشرة.</p>
             <Button size="sm" className="w-full" asChild>
-              <Link href="/custom-request">أداة التخصيص</Link>
+              <Link href="/contact">تواصل معنا</Link>
             </Button>
           </div>
         </aside>

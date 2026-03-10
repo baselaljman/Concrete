@@ -31,17 +31,17 @@ export function Navbar() {
             <Link href="/catalog" className="text-sm font-medium hover:text-accent transition-colors">
               المنتجات
             </Link>
-            <Link href="/custom-request" className="text-sm font-medium hover:text-accent transition-colors">
-              طلب خاص
-            </Link>
             <Link href="/about" className="text-sm font-medium hover:text-accent transition-colors">
               لماذا نحن؟
+            </Link>
+            <Link href="/contact" className="text-sm font-medium hover:text-accent transition-colors">
+              اتصل بنا
             </Link>
           </div>
         </div>
 
         <div className="flex items-center gap-2">
-          <Link href="/catalog?search=true">
+          <Link href="/catalog">
             <Button variant="ghost" size="icon" className="hidden sm:flex">
               <Search className="h-5 w-5" />
             </Button>
@@ -55,9 +55,8 @@ export function Navbar() {
             </DropdownMenuTrigger>
             <DropdownMenuContent align="start" className="w-48">
               <DropdownMenuItem asChild>
-                <Link href="/profile">الملف الشخصي</Link>
+                <Link href="/contact" className="text-right w-full">تواصل مع الدعم</Link>
               </DropdownMenuItem>
-              <DropdownMenuItem className="text-destructive text-right">تسجيل الخروج</DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
 
@@ -76,8 +75,8 @@ export function Navbar() {
       {isMobileMenuOpen && (
         <div className="md:hidden border-t bg-background p-4 flex flex-col gap-4 text-right">
           <Link href="/catalog" className="text-lg font-medium" onClick={() => setIsMobileMenuOpen(false)}>المنتجات</Link>
-          <Link href="/custom-request" className="text-lg font-medium" onClick={() => setIsMobileMenuOpen(false)}>طلب خاص</Link>
-          <Link href="/about" className="text-lg font-medium" onClick={() => setIsMobileMenuOpen(false)}>عن الشركة</Link>
+          <Link href="/about" className="text-lg font-medium" onClick={() => setIsMobileMenuOpen(false)}>لماذا نحن؟</Link>
+          <Link href="/contact" className="text-lg font-medium" onClick={() => setIsMobileMenuOpen(false)}>اتصل بنا</Link>
         </div>
       )}
     </nav>
