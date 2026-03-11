@@ -6,6 +6,8 @@ import { Footer } from '@/components/Footer';
 import { Toaster } from '@/components/ui/toaster';
 import { FloatingActions } from '@/components/FloatingActions';
 import { LanguageProvider } from '@/components/LanguageProvider';
+import { CartProvider } from '@/components/CartProvider';
+import { AIChatbot } from '@/components/AIChatbot';
 
 export const metadata: Metadata = {
   title: {
@@ -62,13 +64,16 @@ export default function RootLayout({
       </head>
       <body className="font-body antialiased min-h-screen flex flex-col bg-background text-foreground">
         <LanguageProvider>
-          <Navbar />
-          <main className="flex-grow">
-            {children}
-          </main>
-          <Footer />
-          <FloatingActions />
-          <Toaster />
+          <CartProvider>
+            <Navbar />
+            <main className="flex-grow">
+              {children}
+            </main>
+            <Footer />
+            <FloatingActions />
+            <AIChatbot />
+            <Toaster />
+          </CartProvider>
         </LanguageProvider>
       </body>
     </html>
