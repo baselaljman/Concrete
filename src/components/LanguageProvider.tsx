@@ -1,3 +1,4 @@
+
 'use client';
 
 import React, { createContext, useContext, useState, useEffect } from 'react';
@@ -48,7 +49,8 @@ const translations: Record<Language, Record<string, string>> = {
     lang_switch: 'English',
     contact_title: 'تواصل معنا',
     about_title: 'لماذا نحن؟',
-    products_title: 'منتجاتنا'
+    products_title: 'منتجاتنا',
+    our_work_title: 'أعمالنا'
   },
   en: {
     nav_home: 'Home',
@@ -86,7 +88,8 @@ const translations: Record<Language, Record<string, string>> = {
     lang_switch: 'العربية',
     contact_title: 'Contact Us',
     about_title: 'Why Us?',
-    products_title: 'Our Products'
+    products_title: 'Our Products',
+    our_work_title: 'Our Work'
   }
 };
 

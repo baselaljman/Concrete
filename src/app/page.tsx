@@ -7,13 +7,48 @@ import { Button } from '@/components/ui/button';
 import { PRODUCTS, CATEGORIES } from '@/lib/data';
 import { ProductCard } from '@/components/ProductCard';
 import { useLanguage } from '@/components/LanguageProvider';
-import { Truck, Zap, Shield, ArrowLeft, ArrowRight, Construction } from 'lucide-react';
+import { Truck, Zap, Shield, ArrowLeft, ArrowRight, Construction, Images } from 'lucide-react';
+
+const GALLERY_IMAGES = [
+  "https://xn--ogbhrq.vip/wp-content/uploads/2026/03/conc-31.jpeg",
+  "https://xn--ogbhrq.vip/wp-content/uploads/2026/03/conc-32.jpeg",
+  "https://xn--ogbhrq.vip/wp-content/uploads/2026/03/conc-33.jpeg",
+  "https://xn--ogbhrq.vip/wp-content/uploads/2026/03/conc-34.jpeg",
+  "https://xn--ogbhrq.vip/wp-content/uploads/2026/03/conc-1.jpeg",
+  "https://xn--ogbhrq.vip/wp-content/uploads/2026/03/conc-2.jpeg",
+  "https://xn--ogbhrq.vip/wp-content/uploads/2026/03/conc-4.jpeg",
+  "https://xn--ogbhrq.vip/wp-content/uploads/2026/03/conc-3.jpeg",
+  "https://xn--ogbhrq.vip/wp-content/uploads/2026/03/conc-13.jpeg",
+  "https://xn--ogbhrq.vip/wp-content/uploads/2026/03/conc-14.jpeg",
+  "https://xn--ogbhrq.vip/wp-content/uploads/2026/03/conc-5.jpeg",
+  "https://xn--ogbhrq.vip/wp-content/uploads/2026/03/conc-7.jpeg",
+  "https://xn--ogbhrq.vip/wp-content/uploads/2026/03/conc-8.jpeg",
+  "https://xn--ogbhrq.vip/wp-content/uploads/2026/03/conc-9.jpeg",
+  "https://xn--ogbhrq.vip/wp-content/uploads/2026/03/conc-10.jpeg",
+  "https://xn--ogbhrq.vip/wp-content/uploads/2026/03/conc-11.jpeg",
+  "https://xn--ogbhrq.vip/wp-content/uploads/2026/03/conc-12.jpeg",
+  "https://xn--ogbhrq.vip/wp-content/uploads/2026/03/conc-15.jpeg",
+  "https://xn--ogbhrq.vip/wp-content/uploads/2026/03/conc-16.jpeg",
+  "https://xn--ogbhrq.vip/wp-content/uploads/2026/03/conc-17.jpeg",
+  "https://xn--ogbhrq.vip/wp-content/uploads/2026/03/conc-18.jpeg",
+  "https://xn--ogbhrq.vip/wp-content/uploads/2026/03/conc-19.jpeg",
+  "https://xn--ogbhrq.vip/wp-content/uploads/2026/03/conc-20.jpeg",
+  "https://xn--ogbhrq.vip/wp-content/uploads/2026/03/conc-21.jpeg",
+  "https://xn--ogbhrq.vip/wp-content/uploads/2026/03/conc-22.jpeg",
+  "https://xn--ogbhrq.vip/wp-content/uploads/2026/03/conc-23.jpeg",
+  "https://xn--ogbhrq.vip/wp-content/uploads/2026/03/conc-24.jpeg",
+  "https://xn--ogbhrq.vip/wp-content/uploads/2026/03/conc-25.jpeg",
+  "https://xn--ogbhrq.vip/wp-content/uploads/2026/03/conc-26.jpeg",
+  "https://xn--ogbhrq.vip/wp-content/uploads/2026/03/conc-27.jpeg",
+  "https://xn--ogbhrq.vip/wp-content/uploads/2026/03/conc-28.jpeg",
+  "https://xn--ogbhrq.vip/wp-content/uploads/2026/03/conc-29.jpeg",
+  "https://xn--ogbhrq.vip/wp-content/uploads/2026/03/conc-30.jpeg",
+  "https://xn--ogbhrq.vip/wp-content/uploads/2026/03/conc-6.jpeg"
+];
 
 export default function Home() {
   const { language, t, dir } = useLanguage();
   const heroImg = 'https://xn--ogbhrq.vip/wp-content/uploads/2026/03/concrete4.png';
-  const qualityImg = 'https://xn--ogbhrq.vip/wp-content/uploads/2026/03/concrete9.png';
-  const phoneNumber = '0552076668';
   const whatsappNumber = '966552076668';
 
   return (
@@ -88,6 +123,50 @@ export default function Home() {
           {PRODUCTS.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
+        </div>
+      </section>
+
+      {/* Our Work / Gallery Section */}
+      <section className="bg-muted/30 py-16 md:py-24">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12 space-y-4">
+            <h2 className="text-3xl md:text-5xl font-headline font-bold text-primary flex items-center justify-center gap-3">
+              {t('our_work_title')} <Images className="h-8 w-8 text-accent" />
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
+              {language === 'ar' 
+                ? 'فخورون بتنفيذ أرقى المشاريع الخرسانية والإنشائية في مختلف أنحاء المملكة، بجودة تضمن الاستدامة والتميز.'
+                : 'Proud to execute the finest concrete and construction projects across the Kingdom, with quality ensuring sustainability and excellence.'}
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+            {GALLERY_IMAGES.map((src, index) => (
+              <div 
+                key={index} 
+                className="group relative aspect-square overflow-hidden rounded-2xl border-4 border-white shadow-sm hover:shadow-xl transition-all duration-500"
+              >
+                <Image 
+                  src={src} 
+                  alt={`Work ${index + 1}`} 
+                  fill 
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                />
+                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                   <div className="h-10 w-10 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm">
+                      <Zap className="text-white h-5 w-5" />
+                   </div>
+                </div>
+              </div>
+            ))}
+          </div>
+          
+          <div className="mt-12 text-center">
+             <Button size="lg" className="bg-primary hover:bg-primary/90 px-12 h-14 text-lg font-bold" asChild>
+                <Link href="/contact">{t('btn_contact')}</Link>
+             </Button>
+          </div>
         </div>
       </section>
     </div>
