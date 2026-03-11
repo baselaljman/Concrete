@@ -124,7 +124,7 @@ export const PRODUCTS: Product[] = [
       'Internal moisture insulation',
       'Available in various geometric shapes'
     ],
-    imageUrl: 'https://xn--ogbhrq.vip/wp-content/uploads/2026/03/concrete1.png',
+    imageUrl: 'https://xn--ogbhrq.vip/wp-content/uploads/2026/03/concrete3.png',
     material: 'خرسانة مسلحة بالألياف',
     enMaterial: 'Fiber Reinforced Concrete'
   }
