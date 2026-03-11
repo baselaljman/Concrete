@@ -7,7 +7,6 @@ import { Toaster } from '@/components/ui/toaster';
 import { FloatingActions } from '@/components/FloatingActions';
 import { LanguageProvider } from '@/components/LanguageProvider';
 import { CartProvider } from '@/components/CartProvider';
-import { AIChatbot } from '@/components/AIChatbot';
 
 export const metadata: Metadata = {
   title: {
@@ -71,7 +70,6 @@ export default function RootLayout({
             </main>
             <Footer />
             <FloatingActions />
-            <AIChatbot />
             <Toaster />
           </CartProvider>
         </LanguageProvider>
