@@ -12,6 +12,9 @@ import { Truck, Zap, Shield, ArrowLeft, ArrowRight, Construction, Images, Maximi
 import { Dialog, DialogContent, DialogTrigger, DialogTitle } from '@/components/ui/dialog';
 
 const GALLERY_IMAGES = [
+  "https://xn--ogbhrq.vip/wp-content/uploads/2026/03/co6.jpeg",
+  "https://xn--ogbhrq.vip/wp-content/uploads/2026/03/co5.jpeg",
+  "https://xn--ogbhrq.vip/wp-content/uploads/2026/03/co3.jpeg",
   "https://xn--ogbhrq.vip/wp-content/uploads/2026/03/conc-31.jpeg",
   "https://xn--ogbhrq.vip/wp-content/uploads/2026/03/conc-32.jpeg",
   "https://xn--ogbhrq.vip/wp-content/uploads/2026/03/conc-33.jpeg",
@@ -50,7 +53,6 @@ const GALLERY_IMAGES = [
 
 export default function Home() {
   const { language, t, dir } = useLanguage();
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const heroImg = 'https://xn--ogbhrq.vip/wp-content/uploads/2026/03/concrete4.png';
   const whatsappNumber = '966552076668';
 
@@ -65,7 +67,7 @@ export default function Home() {
           priority
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-l from-primary/90 to-primary/40" />
+        <div className="absolute inset-0 bg-black/50" />
         <div className="container mx-auto px-4 relative z-10 text-white">
           <div className={`max-w-2xl space-y-6 ${dir === 'rtl' ? 'ml-auto text-right' : 'mr-auto text-left'}`}>
             <h1 className="text-4xl sm:text-5xl md:text-7xl font-headline font-bold leading-tight">
