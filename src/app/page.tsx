@@ -3,11 +3,13 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
+import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { PRODUCTS, CATEGORIES } from '@/lib/data';
 import { ProductCard } from '@/components/ProductCard';
 import { useLanguage } from '@/components/LanguageProvider';
-import { Truck, Zap, Shield, ArrowLeft, ArrowRight, Construction, Images } from 'lucide-react';
+import { Truck, Zap, Shield, ArrowLeft, ArrowRight, Construction, Images, Maximize2 } from 'lucide-react';
+import { Dialog, DialogContent, DialogTrigger, DialogTitle } from '@/components/ui/dialog';
 
 const GALLERY_IMAGES = [
   "https://xn--ogbhrq.vip/wp-content/uploads/2026/03/conc-31.jpeg",
@@ -48,6 +50,7 @@ const GALLERY_IMAGES = [
 
 export default function Home() {
   const { language, t, dir } = useLanguage();
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const heroImg = 'https://xn--ogbhrq.vip/wp-content/uploads/2026/03/concrete4.png';
   const whatsappNumber = '966552076668';
 
@@ -142,23 +145,37 @@ export default function Home() {
           
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
             {GALLERY_IMAGES.map((src, index) => (
-              <div 
-                key={index} 
-                className="group relative aspect-square overflow-hidden rounded-2xl border-4 border-white shadow-sm hover:shadow-xl transition-all duration-500"
-              >
-                <Image 
-                  src={src} 
-                  alt={`Work ${index + 1}`} 
-                  fill 
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
-                  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-                />
-                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                   <div className="h-10 w-10 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm">
-                      <Zap className="text-white h-5 w-5" />
-                   </div>
-                </div>
-              </div>
+              <Dialog key={index}>
+                <DialogTrigger asChild>
+                  <button 
+                    className="group relative aspect-square overflow-hidden rounded-2xl border-4 border-white shadow-sm hover:shadow-xl transition-all duration-500 cursor-zoom-in"
+                  >
+                    <Image 
+                      src={src} 
+                      alt={`Work ${index + 1}`} 
+                      fill 
+                      className="object-cover transition-transform duration-700 group-hover:scale-110"
+                      sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                    />
+                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                       <div className="h-10 w-10 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm">
+                          <Maximize2 className="text-white h-5 w-5" />
+                       </div>
+                    </div>
+                  </button>
+                </DialogTrigger>
+                <DialogContent className="max-w-4xl p-0 overflow-hidden bg-transparent border-none shadow-none">
+                  <DialogTitle className="sr-only">مشاهدة العمل</DialogTitle>
+                  <div className="relative aspect-[4/3] w-full">
+                    <Image 
+                      src={src} 
+                      alt={`Full Work ${index + 1}`} 
+                      fill 
+                      className="object-contain"
+                    />
+                  </div>
+                </DialogContent>
+              </Dialog>
             ))}
           </div>
           
