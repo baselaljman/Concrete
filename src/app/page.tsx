@@ -8,7 +8,7 @@ import { Button } from '@/components/ui/button';
 import { PRODUCTS, CATEGORIES } from '@/lib/data';
 import { ProductCard } from '@/components/ProductCard';
 import { useLanguage } from '@/components/LanguageProvider';
-import { Truck, Zap, Shield, ArrowLeft, ArrowRight, Construction, Images, Maximize2 } from 'lucide-react';
+import { Truck, Zap, Shield, ArrowLeft, ArrowRight, Construction, Images, Maximize2, Award, Clock, HeartHandshake } from 'lucide-react';
 import { Dialog, DialogContent, DialogTrigger, DialogTitle } from '@/components/ui/dialog';
 
 const GALLERY_IMAGES = [
@@ -55,6 +55,29 @@ export default function Home() {
   const { language, t, dir } = useLanguage();
   const heroImg = 'https://xn--ogbhrq.vip/wp-content/uploads/2026/03/concrete4.png';
   const whatsappNumber = '966552076668';
+
+  const whyUsFeatures = [
+    {
+      icon: Award,
+      title: language === 'ar' ? 'جودة هندسية' : 'Engineering Quality',
+      desc: language === 'ar' ? 'منتجات مصنعة وفق أعلى المعايير والمواصفات السعودية.' : 'Products manufactured to the highest Saudi standards and specs.',
+    },
+    {
+      icon: Truck,
+      title: language === 'ar' ? 'توصيل سريع' : 'Fast Delivery',
+      desc: language === 'ar' ? 'أسطول نقل مجهز لتوصيل وتنزيل المنتجات في موقعكم.' : 'Equipped transport fleet to deliver and unload at your site.',
+    },
+    {
+      icon: Clock,
+      title: language === 'ar' ? 'دقة في المواعيد' : 'Punctuality',
+      desc: language === 'ar' ? 'نلتزم بجداول التوريد المتفق عليها لضمان سير مشروعكم.' : 'We adhere to agreed supply schedules to ensure project progress.',
+    },
+    {
+      icon: HeartHandshake,
+      title: language === 'ar' ? 'دعم فني متخصص' : 'Expert Support',
+      desc: language === 'ar' ? 'فريق هندسي جاهز لتقديم الاستشارات والمواصفات الفنية.' : 'Engineering team ready to provide technical consultations.',
+    },
+  ];
 
   return (
     <div className="flex flex-col gap-12 md:gap-20 pb-20 overflow-x-hidden">
@@ -115,6 +138,33 @@ export default function Home() {
             </Link>
           ))}
         </div>
+      </section>
+
+      {/* Why Choose Us Section */}
+      <section className="bg-primary py-16 md:py-24 text-white overflow-hidden relative">
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="text-center mb-16 space-y-4">
+            <h2 className="text-3xl md:text-5xl font-headline font-bold">{t('section_why_title')}</h2>
+            <p className="text-primary-foreground/70 max-w-2xl mx-auto text-lg">
+              {language === 'ar' 
+                ? 'نحن نجمع بين الخبرة الفنية والقدرة الإنتاجية العالية لتوريد أفضل المنتجات الخرسانية لمشروعك.'
+                : 'We combine technical expertise and high production capacity to supply the best concrete products for your project.'}
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {whyUsFeatures.map((feature, index) => (
+              <div key={index} className={`p-8 bg-white/5 rounded-3xl border border-white/10 hover:bg-white/10 transition-colors ${dir === 'rtl' ? 'text-right' : 'text-left'}`}>
+                <div className={`h-14 w-14 bg-accent rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-accent/20 ${dir === 'rtl' ? 'mr-0 ml-auto' : 'ml-0 mr-auto'}`}>
+                  <feature.icon className="h-7 w-7 text-white" />
+                </div>
+                <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
+                <p className="text-primary-foreground/60 text-sm leading-relaxed">{feature.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="absolute top-0 right-0 w-1/3 h-full bg-accent/10 -skew-x-12 translate-x-1/2" />
+        <div className="absolute bottom-0 left-0 w-1/4 h-full bg-accent/5 skew-x-12 -translate-x-1/2" />
       </section>
 
       {/* Products */}
