@@ -8,8 +8,44 @@ import { FloatingActions } from '@/components/FloatingActions';
 import { LanguageProvider } from '@/components/LanguageProvider';
 
 export const metadata: Metadata = {
-  title: 'كونكريت | حلول خرسانية متميزة',
-  description: 'حلول خرسانية متكاملة لمشاريعكم بكفاءة وجودة عالية.',
+  title: {
+    default: 'كونكريت سولوشنز | حلول خرسانية مسبقة الصب في السعودية',
+    template: '%s | كونكريت سولوشنز'
+  },
+  description: 'المصنع الرائد للمنتجات الخرسانية مسبقة الصب في الرياض. نوفر قواعد إنارة، حواجز نيوجيرسي، مناهل، وكراسي تجميلية بجودة هندسية عالية وتوصيل لكافة أنحاء المملكة.',
+  keywords: ['خرسانة مسبقة الصب', 'قواعد انارة خرسانية', 'حواجز نيوجيرسي', 'مناهل خرسانية', 'كراسي حدائق خرسانية', 'مصدات سيارات', 'Precast Concrete Saudi Arabia', 'Concrete Solutions Riyadh'],
+  authors: [{ name: 'Concreate Solutions' }],
+  creator: 'Concreate Solutions',
+  publisher: 'Concreate Solutions',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  openGraph: {
+    title: 'كونكريت سولوشنز | حلول خرسانية متميزة',
+    description: 'حلول خرسانية متكاملة لمشاريعكم بكفاءة وجودة عالية في المملكة العربية السعودية.',
+    url: 'https://concreate-solutions.com',
+    siteName: 'كونكريت سولوشنز',
+    locale: 'ar_SA',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'كونكريت سولوشنز | حلول خرسانية مسبقة الصب',
+    description: 'نوفر أجود المنتجات الخرسانية للمشاريع الإنشائية والبنية التحتية في السعودية.',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 };
 
 export default function RootLayout({
