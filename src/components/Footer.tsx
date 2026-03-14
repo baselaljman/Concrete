@@ -1,3 +1,4 @@
+
 'use client';
 
 import Link from 'next/link';
@@ -32,6 +33,8 @@ export function Footer() {
               <li><Link href="/catalog" className="hover:text-accent transition-colors">{t('footer_catalog')}</Link></li>
               <li><Link href="/about" className="hover:text-accent transition-colors">{t('footer_company_profile')}</Link></li>
               <li><Link href="/contact" className="hover:text-accent transition-colors">{t('footer_customer_support')}</Link></li>
+              <li><Link href="/privacy" className="hover:text-accent transition-colors">{t('footer_privacy')}</Link></li>
+              <li><Link href="/terms" className="hover:text-accent transition-colors">{t('footer_terms')}</Link></li>
             </ul>
           </div>
 
@@ -63,7 +66,7 @@ export function Footer() {
         </div>
         
         <div className="mt-12 pt-8 border-t border-primary-foreground/10 text-center text-sm text-primary-foreground/50">
-          <p>© {new Date().getFullYear()} {language === 'ar' ? 'كونكريت' : 'Concrete'}. {t('footer_rights')}.</p>
+          <p>© {new Date().getFullYear()} {t('footer_rights')}</p>
         </div>
       </div>
     </footer>
