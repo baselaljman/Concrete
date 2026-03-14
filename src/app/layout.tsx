@@ -10,30 +10,30 @@ import { CartProvider } from '@/components/CartProvider';
 
 export const metadata: Metadata = {
   title: {
-    default: 'كونكريت سولوشنز | حلول خرسانية مسبقة الصب في السعودية',
-    template: '%s | كونكريت سولوشنز'
+    default: 'شركة للأعمال والحلول الخرسانية | توريد خرسانة مسبقة الصب',
+    template: '%s | شركة للأعمال الخرسانية'
   },
-  description: 'المصنع الرائد للمنتجات الخرسانية مسبقة الصب في الرياض. نوفر قواعد إنارة، حواجز نيوجيرسي، مناهل، وكراسي تجميلية بجودة هندسية عالية وتوصيل لكافة أنحاء المملكة.',
-  keywords: ['خرسانة مسبقة الصب', 'قواعد انارة خرسانية', 'حواجز نيوجيرسي', 'مناهل خرسانية', 'كراسي حدائق خرسانية', 'مصدات سيارات', 'Precast Concrete Saudi Arabia', 'Concrete Solutions Riyadh'],
-  authors: [{ name: 'Concreate Solutions' }],
-  creator: 'Concreate Solutions',
-  publisher: 'Concreate Solutions',
+  description: 'المصنع الرائد للأعمال والمنتجات الخرسانية مسبقة الصب في الرياض. نوفر قواعد إنارة، حواجز نيوجيرسي، مناهل، وكراسي تجميلية بجودة هندسية عالية وتوصيل لكافة أنحاء المملكة.',
+  keywords: ['شركة اعمال خرسانية', 'خرسانة مسبقة الصب', 'قواعد انارة خرسانية', 'حواجز نيوجيرسي', 'مناهل خرسانية', 'كراسي حدائق خرسانية', 'مصدات سيارات', 'Precast Concrete Saudi Arabia', 'Concrete Solutions Riyadh'],
+  authors: [{ name: 'Concrete Works' }],
+  creator: 'Concrete Works',
+  publisher: 'Concrete Works',
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
   openGraph: {
-    title: 'كونكريت سولوشنز | حلول خرسانية متميزة',
+    title: 'شركة للأعمال والحلول الخرسانية | مسبق الصب',
     description: 'حلول خرسانية متكاملة لمشاريعكم بكفاءة وجودة عالية في المملكة العربية السعودية.',
     url: 'https://concreate-solutions.com',
-    siteName: 'كونكريت سولوشنز',
+    siteName: 'شركة الأعمال الخرسانية',
     locale: 'ar_SA',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'كونكريت سولوشنز | حلول خرسانية مسبقة الصب',
+    title: 'شركة للأعمال والحلول الخرسانية | توريد مباشر',
     description: 'نوفر أجود المنتجات الخرسانية للمشاريع الإنشائية والبنية التحتية في السعودية.',
   },
   robots: {

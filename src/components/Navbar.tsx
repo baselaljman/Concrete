@@ -1,3 +1,4 @@
+
 'use client';
 
 import Link from 'next/link';
@@ -36,7 +37,7 @@ export function Navbar() {
               <Construction className="h-6 w-6 text-primary-foreground" />
             </div>
             <span className="font-headline font-bold text-xl tracking-tight text-primary">
-              {language === 'ar' ? 'كونكريت' : 'Concrete'}
+              {t('brand_name')}
             </span>
           </Link>
           <div className="hidden md:flex items-center gap-6">

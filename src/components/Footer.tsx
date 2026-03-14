@@ -14,7 +14,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="space-y-4">
             <Link href="/" className={`flex items-center gap-2 ${dir === 'rtl' ? 'justify-end' : 'justify-start'}`}>
-              <span className="font-headline font-bold text-xl">{language === 'ar' ? 'كونكريت' : 'Concrete'}</span>
+              <span className="font-headline font-bold text-xl">{t('brand_name')}</span>
               <Construction className="h-6 w-6 text-accent" />
             </Link>
             <p className="text-sm text-primary-foreground/70 leading-relaxed">
