@@ -18,8 +18,8 @@ export default function TermsPage() {
           </h2>
           <p>
             {language === 'ar'
-              ? 'باستخدامك لموقع شركة للأعمال والحلول الخرسانية، فإنك توافق على الالتزام بهذه الشروط والأحكام وجميع القوانين واللوائح المعمول بها في المملكة العربية السعودية.'
-              : 'By using the Concrete Works & Solutions Co. website, you agree to be bound by these terms and conditions and all applicable laws and regulations in the Kingdom of Saudi Arabia.'}
+              ? 'باستخدامك لمنصة للأعمال والحلول الخرسانية، فإنك توافق على الالتزام بهذه الشروط والأحكام وجميع القوانين واللوائح المعمول بها في المملكة العربية السعودية.'
+              : 'By using the Concrete Works & Solutions platform, you agree to be bound by these terms and conditions and all applicable laws and regulations in the Kingdom of Saudi Arabia.'}
           </p>
         </section>
         <section className={language === 'ar' ? 'text-right' : 'text-left'}>
@@ -38,8 +38,8 @@ export default function TermsPage() {
           </h2>
           <p>
             {language === 'ar'
-              ? 'تلتزم الشركة بتوريد منتجات خرسانية مطابقة للمواصفات السعودية، ولا تتحمل الشركة مسؤولية التأخير الناتج عن ظروف خارجة عن إرادتها (مثل سوء الأحوال الجوية أو القوة القاهرة).'
-              : 'The company is committed to supplying concrete products that comply with Saudi specifications, and the company is not responsible for delays resulting from circumstances beyond its control (such as bad weather or force majeure).'}
+              ? 'نلتزم بتوريد منتجات خرسانية مطابقة للمواصفات السعودية، ولا نتحمل مسؤولية التأخير الناتج عن ظروف خارجة عن الإرادة (مثل سوء الأحوال الجوية أو القوة القاهرة).'
+              : 'We are committed to supplying concrete products that comply with Saudi specifications, and we are not responsible for delays resulting from circumstances beyond control (such as bad weather or force majeure).'}
           </p>
         </section>
         <section className={language === 'ar' ? 'text-right' : 'text-left'}>
@@ -48,8 +48,8 @@ export default function TermsPage() {
           </h2>
           <p>
             {language === 'ar'
-              ? 'جميع المحتويات الموجودة على هذا الموقع، بما في ذلك الصور والوصف الفني والشعارات، هي ملك حصري لشركة للأعمال والحلول الخرسانية.'
-              : 'All content on this website, including images, technical descriptions, and logos, is the exclusive property of Concrete Works & Solutions Co.'}
+              ? 'جميع المحتويات الموجودة على هذا الموقع، بما في ذلك الصور والوصف الفني والشعارات، هي ملك حصري لجهة للأعمال والحلول الخرسانية.'
+              : 'All content on this website, including images, technical descriptions, and logos, is the exclusive property of Concrete Works & Solutions.'}
           </p>
         </section>
       </div>

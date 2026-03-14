@@ -39,12 +39,12 @@ export default function RootLayout({
 
 export const metadata: Metadata = {
   title: {
-    default: 'شركة للأعمال والحلول الخرسانية | توريد خرسانة مسبقة الصب',
-    template: '%s | شركة للأعمال الخرسانية'
+    default: 'للأعمال والحلول الخرسانية | توريد خرسانة مسبقة الصب',
+    template: '%s | أعمال وحلول خرسانية'
   },
-  description: 'المصنع الرائد للأعمال والمنتجات الخرسانية مسبقة الصب في الرياض. نوفر قواعد إنارة، حواجز نيوجيرسي، مناهل، وكراسي تجميلية بجودة هندسية عالية وتوصيل لكافة أنحاء المملكة.',
-  keywords: ['شركة اعمال خرسانية', 'خرسانة مسبقة الصب', 'قواعد انارة خرسانية', 'حواجز نيوجيرسي', 'مناهل خرسانية', 'كراسي حدائق خرسانية', 'مصدات سيارات', 'Precast Concrete Saudi Arabia', 'Concrete Works & Solutions'],
-  authors: [{ name: 'Concrete Works' }],
+  description: 'حلول احترافية للأعمال والمنتجات الخرسانية مسبقة الصب في الرياض. نوفر قواعد إنارة، حواجز نيوجيرسي، مناهل، وكراسي تجميلية بجودة هندسية عالية وتوصيل لكافة أنحاء المملكة.',
+  keywords: ['اعمال خرسانية', 'حلول خرسانية', 'خرسانة مسبقة الصب', 'قواعد انارة خرسانية', 'حواجز نيوجيرسي', 'مناهل خرسانية', 'كراسي حدائق خرسانية', 'مصدات سيارات', 'Precast Concrete Saudi Arabia', 'Concrete Works & Solutions'],
+  authors: [{ name: 'Concrete Works & Solutions' }],
   creator: 'Concrete Works',
   publisher: 'Concrete Works',
   formatDetection: {
@@ -53,16 +53,16 @@ export const metadata: Metadata = {
     telephone: false,
   },
   openGraph: {
-    title: 'شركة للأعمال والحلول الخرسانية | مسبق الصب',
+    title: 'للأعمال والحلول الخرسانية | مسبق الصب',
     description: 'حلول خرسانية متكاملة لمشاريعكم بكفاءة وجودة عالية في المملكة العربية السعودية.',
     url: 'https://concreate-solutions.com',
-    siteName: 'شركة الأعمال الخرسانية',
+    siteName: 'للأعمال والحلول الخرسانية',
     locale: 'ar_SA',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'شركة للأعمال والحلول الخرسانية | توريد مباشر',
+    title: 'الأعمال والحلول الخرسانية | توريد مباشر',
     description: 'نوفر أجود المنتجات الخرسانية للمشاريع الإنشائية والبنية التحتية في السعودية.',
   },
   robots: {

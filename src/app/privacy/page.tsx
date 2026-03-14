@@ -18,8 +18,8 @@ export default function PrivacyPage() {
           </h2>
           <p>
             {language === 'ar' 
-              ? 'تلتزم شركة للأعمال والحلول الخرسانية بحماية خصوصيتك. نحن نجمع المعلومات التي تقدمها لنا مباشرة عند طلب عرض سعر أو التواصل معنا، مثل الاسم، رقم الهاتف، والبريد الإلكتروني، وذلك لغرض تقديم الخدمة الفنية والتجارية فقط.'
-              : 'Concrete Works & Solutions Co. is committed to protecting your privacy. We collect information you provide directly to us when requesting a quote or contacting us, such as name, phone number, and email, solely for providing technical and commercial services.'}
+              ? 'نلتزم في منصة الأعمال والحلول الخرسانية بحماية خصوصيتك. نحن نجمع المعلومات التي تقدمها لنا مباشرة عند طلب عرض سعر أو التواصل معنا، مثل الاسم، رقم الهاتف، والبريد الإلكتروني، وذلك لغرض تقديم الخدمة الفنية والتجارية فقط.'
+              : 'We are committed to protecting your privacy in our Concrete Works & Solutions platform. We collect information you provide directly to us when requesting a quote or contacting us, such as name, phone number, and email, solely for providing technical and commercial services.'}
           </p>
         </section>
         <section className={language === 'ar' ? 'text-right' : 'text-left'}>
