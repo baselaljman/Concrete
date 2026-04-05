@@ -49,7 +49,12 @@ const translations: Record<Language, Record<string, string>> = {
     contact_title: 'تواصل معنا',
     about_title: 'لماذا نحن؟',
     products_title: 'المنتجات والحلول',
-    our_work_title: 'أعمالنا'
+    our_work_title: 'أعمالنا',
+    bot_welcome: 'مرحباً بك في دالية الفرات. كيف يمكننا مساعدتك اليوم في مشروعك الخرساني؟',
+    bot_title: 'الدعم الفني لدالية الفرات',
+    bot_thinking: 'جاري مراجعة المواصفات...',
+    bot_placeholder: 'اسأل عن الأسعار أو المواصفات...',
+    bot_error: 'نعتذر، حدث خطأ. يمكنك التواصل معنا مباشرة عبر واتساب.'
   },
   en: {
     nav_home: 'Home',
@@ -87,7 +92,12 @@ const translations: Record<Language, Record<string, string>> = {
     contact_title: 'Contact Us',
     about_title: 'Why Us?',
     products_title: 'Products & Solutions',
-    our_work_title: 'Our Work'
+    our_work_title: 'Our Work',
+    bot_welcome: 'Welcome to Daliat Al Furat. How can we help you with your concrete project today?',
+    bot_title: 'Daliat Al Furat Support',
+    bot_thinking: 'Reviewing specifications...',
+    bot_placeholder: 'Ask about prices or specs...',
+    bot_error: 'Sorry, an error occurred. Please contact us via WhatsApp.'
   }
 };
 
