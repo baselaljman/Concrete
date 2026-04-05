@@ -1,5 +1,6 @@
 
 import type {Metadata} from 'next';
+import Script from 'next/script';
 import './globals.css';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
@@ -16,6 +17,20 @@ export default function RootLayout({
   return (
     <html lang="ar">
       <head>
+        {/* Google Tag (gtag.js) */}
+        <Script 
+          async 
+          src="https://www.googletagmanager.com/gtag/js?id=AW-18065033910" 
+          strategy="afterInteractive"
+        />
+        <Script id="google-ads-tag" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-18065033910');
+          `}
+        </Script>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=Noto+Kufi+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet" />
