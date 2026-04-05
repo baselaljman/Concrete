@@ -6,8 +6,10 @@ import { ShieldCheck, Target, Award, Users, CheckCircle2, Factory, Truck, HardHa
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
+import { useLanguage } from '@/components/LanguageProvider';
 
 export default function AboutPage() {
+  const { t, language } = useLanguage();
   const qualityImg = 'https://xn--ogbhrq.vip/wp-content/uploads/2026/03/concrete9.png';
   const factoryImg = 'https://xn--ogbhrq.vip/wp-content/uploads/2026/03/concrete4.png';
 
@@ -49,9 +51,11 @@ export default function AboutPage() {
       <section className="bg-primary py-20 text-white relative overflow-hidden">
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl ml-auto">
-            <h1 className="text-4xl md:text-6xl font-headline font-bold mb-6">لماذا نحن؟</h1>
+            <h1 className="text-4xl md:text-6xl font-headline font-bold mb-6">{t('about_title')}</h1>
             <p className="text-lg md:text-xl opacity-80 leading-relaxed">
-              نحن في كونكريت نؤمن بأن القوة تبدأ من الأساس. نقدم حلولاً خرسانية مسبقة الصب تجمع بين المتانة الهندسية والجمال المعماري، لنساهم في بناء مستقبل المملكة.
+              {language === 'ar' 
+                ? 'نحن في دالية الفرات للأعمال والحلول الخرسانية نؤمن بأن القوة تبدأ من الأساس. نقدم حلولاً خرسانية مسبقة الصب تجمع بين المتانة الهندسية والجمال المعماري.'
+                : 'At Daliat Al Furat for Concrete Works & Solutions, we believe strength starts from the foundation. We provide precast concrete solutions combining engineering durability with architectural beauty.'}
             </p>
           </div>
         </div>
@@ -62,12 +66,12 @@ export default function AboutPage() {
       <section className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="order-2 lg:order-1 relative aspect-video lg:aspect-square rounded-3xl overflow-hidden shadow-2xl">
-            <Image src={qualityImg} alt="جودة كونكريت" fill className="object-cover" />
+            <Image src={qualityImg} alt="جودة دالية الفرات" fill className="object-cover" />
           </div>
           <div className="order-1 lg:order-2 space-y-6">
             <h2 className="text-3xl font-headline font-bold text-primary">قصة التميز</h2>
             <p className="text-muted-foreground leading-relaxed">
-              تأسست كونكريت لتلبية الطلب المتزايد على المنتجات الخرسانية عالية الجودة في السوق السعودي. ومنذ البداية، ركزنا على الاستثمار في أفضل القوالب والمعدات، واستقطاب الكفاءات الفنية لضمان خروج كل منتج بأفضل صورة ممكنة.
+              تأسست دالية الفرات للأعمال والحلول الخرسانية لتلبية الطلب المتزايد على المنتجات الخرسانية عالية الجودة في السوق السعودي. ومنذ البداية، ركزنا على الاستثمار في أفضل القوالب والمعدات لضمان أعلى معايير الجودة.
             </p>
             <p className="text-muted-foreground leading-relaxed">
               نحن لا نبيع منتجات خرسانية فحسب، بل نقدم استشارات هندسية وحلولاً مخصصة لكل مشروع، سواء كان ذلك لإنارة الطرق، أو أنظمة الصرف الصحي، أو تجميل الحدائق والمستشفيات.
@@ -141,23 +145,8 @@ export default function AboutPage() {
               </Button>
             </div>
             <div className="relative aspect-video rounded-2xl overflow-hidden border-8 border-white/10 shadow-2xl">
-              <Image src={factoryImg} alt="مصنع كونكريت" fill className="object-cover" />
+              <Image src={factoryImg} alt="مصنع دالية الفرات" fill className="object-cover" />
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="container mx-auto px-4 text-center">
-        <div className="max-w-2xl mx-auto space-y-6">
-          <h2 className="text-3xl font-headline font-bold text-primary">جاهزون لبدء مشروعك القادم؟</h2>
-          <p className="text-muted-foreground leading-relaxed">
-            سواء كنت مقاولاً يبحث عن توريد ضخم أو فرداً يحتاج إلى قطعة واحدة، نحن هنا لخدمتك بأفضل المعايير.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-             <Button size="lg" className="bg-primary text-white h-14 px-12" asChild>
-               <Link href="/contact">تواصل معنا الآن</Link>
-             </Button>
           </div>
         </div>
       </section>
