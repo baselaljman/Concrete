@@ -18,8 +18,8 @@ export default function PrivacyPage() {
           </h2>
           <p>
             {language === 'ar' 
-              ? 'نلتزم في دالية الفرات للأعمال والحلول الخرسانية بحماية خصوصيتك. نحن نجمع المعلومات التي تقدمها لنا مباشرة عند طلب عرض سعر أو التواصل معنا، مثل الاسم، رقم الهاتف، والبريد الإلكتروني، وذلك لغرض تقديم الخدمة الفنية والتجارية فقط.'
-              : 'We are committed to protecting your privacy at Daliat Al Furat for Concrete Works & Solutions. We collect information you provide directly to us when requesting a quote or contacting us, such as name, phone number, and email, solely for providing technical and commercial services.'}
+              ? 'نلتزم في الفرات للأعمال الخرسانية بحماية خصوصيتك. نحن نجمع المعلومات التي تقدمها لنا مباشرة عند طلب عرض سعر أو التواصل معنا، مثل الاسم، رقم الهاتف، والبريد الإلكتروني، وذلك لغرض تقديم الخدمة الفنية والتجارية فقط.'
+              : 'We are committed to protecting your privacy at Al Furat Concrete Works. We collect information you provide directly to us when requesting a quote or contacting us, such as name, phone number, and email, solely for providing technical and commercial services.'}
           </p>
         </section>
         <section className={language === 'ar' ? 'text-right' : 'text-left'}>

@@ -18,8 +18,8 @@ export default function TermsPage() {
           </h2>
           <p>
             {language === 'ar'
-              ? 'باستخدامك لموقع دالية الفرات للأعمال والحلول الخرسانية، فإنك توافق على الالتزام بهذه الشروط والأحكام وجميع القوانين واللوائح المعمول بها في المملكة العربية السعودية.'
-              : 'By using the Daliat Al Furat for Concrete Works & Solutions website, you agree to be bound by these terms and conditions and all applicable laws and regulations in the Kingdom of Saudi Arabia.'}
+              ? 'باستخدامك لموقع الفرات للأعمال الخرسانية، فإنك توافق على الالتزام بهذه الشروط والأحكام وجميع القوانين واللوائح المعمول بها في المملكة العربية السعودية.'
+              : 'By using the Al Furat Concrete Works website, you agree to be bound by these terms and conditions and all applicable laws and regulations in the Kingdom of Saudi Arabia.'}
           </p>
         </section>
         <section className={language === 'ar' ? 'text-right' : 'text-left'}>
@@ -48,8 +48,8 @@ export default function TermsPage() {
           </h2>
           <p>
             {language === 'ar'
-              ? 'جميع المحتويات الموجودة على هذا الموقع، بما في ذلك الصور والوصف الفني والشعارات، هي ملك حصري لدالية الفرات للأعمال والحلول الخرسانية.'
-              : 'All content on this website, including images, technical descriptions, and logos, is the exclusive property of Daliat Al Furat for Concrete Works & Solutions.'}
+              ? 'جميع المحتويات الموجودة على هذا الموقع، بما في ذلك الصور والوصف الفني والشعارات، هي ملك حصري للفرات للأعمال الخرسانية.'
+              : 'All content on this website, including images, technical descriptions, and logos, is the exclusive property of Al Furat Concrete Works.'}
           </p>
         </section>
       </div>

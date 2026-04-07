@@ -1,3 +1,4 @@
+
 'use server';
 /**
  * @fileOverview This file defines a Genkit flow for handling custom concrete product specifications.
@@ -72,7 +73,7 @@ const customProductSpecificationPrompt = ai.definePrompt({
   name: 'customProductSpecificationPrompt',
   input: {schema: CustomProductSpecificationInputSchema},
   output: {schema: CustomProductSpecificationOutputSchema},
-  prompt: `You are an expert in concrete product design and manufacturing for 'Concreate Solutions'.
+  prompt: `You are an expert in concrete product design and manufacturing for 'Al Furat Concrete Works'.
 Your task is to analyze a user's natural language description of a custom concrete product and provide a comprehensive response.
 
 Based on the following user description, you must:
