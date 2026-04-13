@@ -1,4 +1,3 @@
-
 'use client';
 
 import Link from 'next/link';
@@ -54,7 +53,7 @@ const GALLERY_IMAGES = [
 export default function Home() {
   const { language, t, dir } = useLanguage();
   const heroImg = 'https://xn--ogbhrq.vip/wp-content/uploads/2026/03/concrete4.png';
-  const whatsappNumber = '966552076668';
+  const whatsappNumber = '966537034897';
 
   const whyUsFeatures = [
     {

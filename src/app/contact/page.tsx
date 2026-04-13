@@ -7,8 +7,8 @@ import { useLanguage } from '@/components/LanguageProvider';
 
 export default function ContactPage() {
   const { t, language, dir } = useLanguage();
-  const phoneNumber = '0552076668';
-  const whatsappNumber = '966552076668';
+  const phoneNumber = '0537034897';
+  const whatsappNumber = '966537034897';
   const email = 'he1991mo@gmail.com';
 
   return (

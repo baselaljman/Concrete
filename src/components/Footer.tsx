@@ -1,4 +1,3 @@
-
 'use client';
 
 import Link from 'next/link';
@@ -55,7 +54,7 @@ export function Footer() {
               <MapPin className="h-5 w-5 text-accent shrink-0" />
             </div>
             <div className={`flex items-center gap-3 text-sm text-primary-foreground/70 ${dir === 'rtl' ? 'justify-end' : 'justify-start'}`}>
-              <span dir="ltr">0552076668</span>
+              <span dir="ltr">0537034897</span>
               <Phone className="h-5 w-5 text-accent shrink-0" />
             </div>
             <div className={`flex items-center gap-3 text-sm text-primary-foreground/70 ${dir === 'rtl' ? 'justify-end' : 'justify-start'}`}>

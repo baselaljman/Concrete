@@ -6,8 +6,8 @@ import { useLanguage } from '@/components/LanguageProvider';
 
 export function FloatingActions() {
   const { t } = useLanguage();
-  const phoneNumber = '0552076668';
-  const whatsappNumber = '966552076668';
+  const phoneNumber = '0537034897';
+  const whatsappNumber = '966537034897';
 
   return (
     <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-3 pointer-events-none">
