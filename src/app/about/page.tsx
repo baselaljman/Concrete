@@ -26,7 +26,7 @@ export default function AboutPage() {
     },
     {
       title: 'خبرة فنية',
-      description: 'فريقنا يمتلك خبرة واسعة في التعامل مع مختلف أنواع الخرسانة والمنتجات مسبقة الصب.',
+      description: 'فريقنا يمتلك خبرة واسعة في التعامل مع مختلف أنواع الخرسانة والمنتجات مسبقة الصنع.',
       icon: Award,
     },
     {
@@ -54,8 +54,8 @@ export default function AboutPage() {
             <h1 className="text-4xl md:text-6xl font-headline font-bold mb-6">{t('about_title')}</h1>
             <p className="text-lg md:text-xl opacity-80 leading-relaxed">
               {language === 'ar' 
-                ? 'نحن في الفرات للأعمال الخرسانية نؤمن بأن القوة تبدأ من الأساس. نقدم حلولاً خرسانية مسبقة الصب تجمع بين المتانة الهندسية والجمال المعماري.'
-                : 'At Al Furat for Concrete Works, we believe strength starts from the foundation. We provide precast concrete solutions combining engineering durability with architectural beauty.'}
+                ? 'نحن في شركة معايير الطرق للبريكاست نؤمن بأن القوة تبدأ من الأساس. نقدم حلولاً خرسانية مسبقة الصنع تجمع بين المتانة الهندسية والجمال المعماري.'
+                : 'At Road Standards for Precast, we believe strength starts from the foundation. We provide precast concrete solutions combining engineering durability with architectural beauty.'}
             </p>
           </div>
         </div>
@@ -66,12 +66,12 @@ export default function AboutPage() {
       <section className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="order-2 lg:order-1 relative aspect-video lg:aspect-square rounded-3xl overflow-hidden shadow-2xl">
-            <Image src={qualityImg} alt="جودة الفرات" fill className="object-cover" />
+            <Image src={qualityImg} alt="جودة معايير الطرق" fill className="object-cover" />
           </div>
           <div className="order-1 lg:order-2 space-y-6">
             <h2 className="text-3xl font-headline font-bold text-primary">قصة التميز</h2>
             <p className="text-muted-foreground leading-relaxed">
-              تأسست الفرات للأعمال الخرسانية لتلبية الطلب المتزايد على المنتجات الخرسانية عالية الجودة في السوق السعودي. ومنذ البداية، ركزنا على الاستثمار في أفضل القوالب والمعدات لضمان أعلى معايير الجودة.
+              تأسست شركة معايير الطرق للبريكاست لتلبية الطلب المتزايد على المنتجات الخرسانية عالية الجودة في السوق السعودي. ومنذ البداية، ركزنا على الاستثمار في أفضل القوالب والمعدات لضمان أعلى معايير الجودة.
             </p>
             <p className="text-muted-foreground leading-relaxed">
               نحن لا نبيع منتجات خرسانية فحسب، بل نقدم استشارات هندسية وحلولاً مخصصة لكل مشروع، سواء كان ذلك لإنارة الطرق، أو أنظمة الصرف الصحي، أو تجميل الحدائق والمستشفيات.
@@ -145,7 +145,7 @@ export default function AboutPage() {
               </Button>
             </div>
             <div className="relative aspect-video rounded-2xl overflow-hidden border-8 border-white/10 shadow-2xl">
-              <Image src={factoryImg} alt="مصنع الفرات" fill className="object-cover" />
+              <Image src={factoryImg} alt="مصنع معايير الطرق" fill className="object-cover" />
             </div>
           </div>
         </div>

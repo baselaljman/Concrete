@@ -73,7 +73,7 @@ const customProductSpecificationPrompt = ai.definePrompt({
   name: 'customProductSpecificationPrompt',
   input: {schema: CustomProductSpecificationInputSchema},
   output: {schema: CustomProductSpecificationOutputSchema},
-  prompt: `You are an expert in concrete product design and manufacturing for 'Al Furat Concrete Works'.
+  prompt: `You are an expert in concrete product design and manufacturing for 'Road Standards for Precast'.
 Your task is to analyze a user's natural language description of a custom concrete product and provide a comprehensive response.
 
 Based on the following user description, you must:
