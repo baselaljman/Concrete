@@ -1,4 +1,3 @@
-
 import type {Metadata} from 'next';
 import Script from 'next/script';
 import './globals.css';
@@ -39,9 +38,9 @@ export default function RootLayout({
         <LanguageProvider>
           <CartProvider>
             <Navbar />
-            <main className="flex-grow">
+            <div className="flex-grow">
               {children}
-            </main>
+            </div>
             <Footer />
             <FloatingActions />
             <Toaster />
@@ -54,30 +53,30 @@ export default function RootLayout({
 
 export const metadata: Metadata = {
   title: {
-    default: 'شركة معايير الطرق للبريكاست | حلول خرسانية مسبقة الصنع',
-    template: '%s | شركة معايير الطرق للبريكاست'
+    default: 'أعمال الخرسانه الجاهزه | حلول خرسانية مسبقة الصنع',
+    template: '%s | أعمال الخرسانه الجاهزه'
   },
-  description: 'شركة معايير الطرق للبريكاست توفر حلول احترافية للأعمال والمنتجات الخرسانية مسبقة الصب في الرياض. نوفر قواعد إنارة، حواجز نيوجيرسي، ومناهل بجودة هندسية عالية وتوصيل لكافة أنحاء المملكة.',
-  keywords: ['معايير الطرق', 'شركة معايير الطرق للبريكاست', 'بريكاست', 'حلول خرسانية', 'خرسانة مسبقة الصنع', 'قواعد انارة خرسانية', 'حواجز نيوجيرسي', 'مناهل خرسانية', 'Road Standards', 'Precast Saudi Arabia'],
-  authors: [{ name: 'شركة معايير الطرق للبريكاست' }],
-  creator: 'معايير الطرق',
-  publisher: 'معايير الطرق',
+  description: 'أعمال الخرسانه الجاهزه توفر حلول احترافية للأعمال والمنتجات الخرسانية مسبقة الصب في الرياض. نوفر قواعد إنارة، حواجز نيوجيرسي، ومناهل بجودة هندسية عالية وتوصيل لكافة أنحاء المملكة.',
+  keywords: ['الخرسانه الجاهزه', 'أعمال الخرسانه الجاهزه', 'بريكاست', 'حلول خرسانية', 'خرسانة مسبقة الصنع', 'قواعد انارة خرسانية', 'حواجز نيوجيرسي', 'مناهل خرسانية', 'Ready Mix', 'Concrete Solutions Saudi Arabia'],
+  authors: [{ name: 'أعمال الخرسانه الجاهزه' }],
+  creator: 'أعمال الخرسانه الجاهزه',
+  publisher: 'أعمال الخرسانه الجاهزه',
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
   openGraph: {
-    title: 'شركة معايير الطرق للبريكاست | مسبق الصنع',
+    title: 'أعمال الخرسانه الجاهزه | مسبق الصنع',
     description: 'حلول خرسانية متكاملة لمشاريعكم بكفاءة وجودة عالية في المملكة العربية السعودية.',
     url: 'https://road-standards-precast.com',
-    siteName: 'معايير الطرق',
+    siteName: 'أعمال الخرسانه الجاهزه',
     locale: 'ar_SA',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'شركة معايير الطرق للبريكاست | توريد مباشر',
+    title: 'أعمال الخرسانه الجاهزه | توريد مباشر',
     description: 'نوفر أجود المنتجات الخرسانية للمشاريع الإنشائية والبنية التحتية في السعودية.',
   },
   robots: {

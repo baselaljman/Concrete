@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useLanguage } from '@/components/LanguageProvider';
@@ -18,8 +17,8 @@ export default function PrivacyPage() {
           </h2>
           <p>
             {language === 'ar' 
-              ? 'نلتزم في شركة معايير الطرق للبريكاست بحماية خصوصيتك. نحن نجمع المعلومات التي تقدمها لنا مباشرة عند طلب عرض سعر أو التواصل معنا، مثل الاسم، رقم الهاتف، والبريد الإلكتروني، وذلك لغرض تقديم الخدمة الفنية والتجارية فقط.'
-              : 'We are committed to protecting your privacy at Road Standards for Precast. We collect information you provide directly to us when requesting a quote or contacting us, such as name, phone number, and email, solely for providing technical and commercial services.'}
+              ? 'نلتزم في أعمال الخرسانه الجاهزه بحماية خصوصيتك. نحن نجمع المعلومات التي تقدمها لنا مباشرة عند طلب عرض سعر أو التواصل معنا، مثل الاسم، رقم الهاتف، والبريد الإلكتروني، وذلك لغرض تقديم الخدمة الفنية والتجارية فقط.'
+              : 'We are committed to protecting your privacy at Ready Mix Concrete Works. We collect information you provide directly to us when requesting a quote or contacting us, such as name, phone number, and email, solely for providing technical and commercial services.'}
           </p>
         </section>
         <section className={language === 'ar' ? 'text-right' : 'text-left'}>
